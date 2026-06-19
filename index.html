@@ -1,0 +1,2415 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diritto Commerciale</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f7f4ee; color: #1a1a1a; font-family: Georgia, serif; font-size: 17px; line-height: 1.75; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 48px 36px 100px; }
+
+/* ── HOME ── */
+.home-title { font-size: 2.4rem; color: #6b2d1f; border-bottom: 3px solid #6b2d1f; padding-bottom: 14px; margin-bottom: 10px; }
+.home-subtitle { color: #6b584a; font-size: 1rem; margin-bottom: 48px; letter-spacing: .04em; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+.box {
+  background: #fff8f0;
+  border: 1px solid #d8d0c4;
+  border-left: 5px solid #6b2d1f;
+  border-radius: 4px;
+  padding: 20px 20px 16px;
+  cursor: pointer;
+  transition: background .15s, transform .12s;
+}
+.box:hover { background: #f0e8dc; transform: translateY(-2px); }
+.box-num { font-size: .8rem; color: #6b2d1f; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
+.box-title { font-size: 1.05rem; color: #2a2420; font-weight: bold; line-height: 1.35; }
+
+/* ── BACK BUTTON ── */
+.back-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #6b2d1f; color: #fff;
+  border: none; border-radius: 4px;
+  padding: 9px 18px; font-size: .9rem; font-family: Georgia, serif;
+  cursor: pointer; margin-bottom: 36px;
+  transition: background .15s;
+}
+.back-btn:hover { background: #8b3d2f; }
+
+/* ── SECTION CONTENT ── */
+.section { display: none; }
+.section.active { display: block; }
+h1 { font-size: 2rem; color: #6b2d1f; border-bottom: 2px solid #6b2d1f; padding-bottom: 12px; margin-bottom: 32px; }
+h2 { font-size: 1.4rem; color: #6b2d1f; margin: 48px 0 14px; border-bottom: 1px solid #d8d0c4; padding-bottom: 6px; scroll-margin-top: 24px; }
+h3 { font-size: 1.1rem; color: #2a2420; margin: 24px 0 10px; }
+p { margin-bottom: 12px; }
+ul, ol { padding-left: 24px; margin-bottom: 12px; }
+li { margin-bottom: 5px; }
+strong { color: #2a2420; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: .95rem; }
+thead tr { background: #2a2420; color: #fff; }
+th { padding: 9px 13px; text-align: left; }
+tbody tr:nth-child(even) { background: #ede8de; }
+td { padding: 8px 13px; border-bottom: 1px solid #d8d0c4; vertical-align: top; }
+.def { background: #eaf0f7; border-left: 4px solid #4a7fa5; padding: 12px 16px; margin: 14px 0; border-radius: 0 4px 4px 0; }
+.exc { background: #fdf3e7; border-left: 4px solid #d4881a; padding: 12px 16px; margin: 14px 0; border-radius: 0 4px 4px 0; }
+.art { background: #f0f4ec; border-left: 4px solid #5a8a4a; padding: 10px 16px; margin: 14px 0; border-radius: 0 4px 4px 0; font-size: .93rem; }
+.toc { background: #eee9df; border: 1px solid #d8d0c4; border-radius: 4px; padding: 20px 24px; margin-bottom: 48px; }
+.toc h3 { font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; color: #6b2d1f; margin-bottom: 12px; }
+.toc ol { padding-left: 18px; }
+.toc a { color: #4a4540; text-decoration: none; font-size: .95rem; }
+.toc a:hover { color: #6b2d1f; }
+hr { border: none; border-top: 1px solid #d8d0c4; margin: 40px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ══ HOME ══ -->
+  <div id="home">
+    <h1 class="home-title">Diritto Commerciale</h1>
+    <p class="home-subtitle">Schemi per la ripetizione orale — seleziona una sezione</p>
+    <div class="grid">
+      <div class="box" onclick="show('s1')">
+        <div class="box-num">Sezione 1</div>
+        <div class="box-title">Imprenditore e impresa</div>
+      </div>
+      <div class="box" onclick="show('s2')">
+        <div class="box-num">Sezione 2</div>
+        <div class="box-title">Società</div>
+      </div>
+      <div class="box" onclick="show('s3')">
+        <div class="box-num">Sezione 3</div>
+        <div class="box-title">Società in accomandita semplice</div>
+      </div>
+      <div class="box" onclick="show('s4')">
+        <div class="box-num">Sezione 4</div>
+        <div class="box-title">Società per azioni</div>
+      </div>
+      <div class="box" onclick="show('s5')">
+        <div class="box-num">Sezione 5</div>
+        <div class="box-title">Società in accomandita per azioni</div>
+      </div>
+      <div class="box" onclick="show('s6')">
+        <div class="box-num">Sezione 6</div>
+        <div class="box-title">Società a responsabilità limitata</div>
+      </div>
+      <div class="box" onclick="show('s7')">
+        <div class="box-num">Sezione 7</div>
+        <div class="box-title">Bilancio</div>
+      </div>
+      <div class="box" onclick="show('s8')">
+        <div class="box-num">Sezione 8</div>
+        <div class="box-title">Rapporto stato-mercato</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SEZIONE 1 ══ -->
+  <div id="s1" class="section">
+    <button class="back-btn" onclick="goHome()">← Torna al menu</button>    
+<h1>1. Imprenditore e Impresa</h1>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#introduzione">Introduzione: impresa, chiavi di lettura, tendenze evolutive</a></li>
+    <li><a href="#nozione">Nozione di imprenditore</a></li>
+    <li><a href="#piccolo">Piccolo imprenditore</a></li>
+    <li><a href="#commerciale-agricolo">Imprenditore commerciale e imprenditore agricolo</a></li>
+    <li><a href="#acquisto">Acquisto e titolarità dell'impresa — responsabilità</a></li>
+    <li><a href="#statuto">Statuto dell'imprenditore commerciale</a></li>
+    <li><a href="#azienda">Azienda</a></li>
+    <li><a href="#segni">Segni distintivi dell'imprenditore</a></li>
+  </ol>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="introduzione">1.1 Introduzione</h2>
+
+<h3>1.1.1 Impresa — nozione di partenza</h3>
+<div class="def">Il diritto commerciale è il diritto privato delle imprese: la parte del diritto privato che costruisce il perimetro giuridico e detta le regole per l'attività economica.</div>
+<ul>
+  <li><strong>Impresa</strong>: attività economica organizzata, professionale, esercitata da un soggetto al fine della produzione o dello scambio di beni o servizi — <em>definita indirettamente</em> dalla nozione di imprenditore (art. 2082 c.c.).</li>
+  <li><strong>Imprenditore</strong>: soggetto con personalità giuridica e titolare dell'impresa; è lui a rispondere delle obbligazioni.</li>
+  <li><strong>Azienda</strong>: complesso organizzato di beni di cui si avvale l'imprenditore.</li>
+  <li><strong>Ditta</strong>: nome commerciale dell'impresa; distingue l'agire dell'impresa nel traffico giuridico.</li>
+</ul>
+
+<h3>1.1.2 Chiavi di lettura del diritto commerciale</h3>
+<table>
+  <thead><tr><th>Prospettiva</th><th>Contenuto</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Storica</strong></td><td>Comprende le regole più antiche e il corpus di principi fondamentali. Nasce nel medioevo (~1000) come <em>ius mercatorum</em>; codificato negli Statuti dei mercanti dei Comuni italiani. Prime "SpA" = Compagnie coloniali olandesi e francesi del '600. Primo Codice di Commercio: 1807. Unificazione nei codici italiani: c.c. 1865, cod. commercio 1882 → unificazione nel c.c. 1942 (libro V).</td></tr>
+    <tr><td><strong>Comunitaria</strong></td><td>Forte impulso da legislazione UE e dalla CGUE; ruolo propulsivo anche su materie non ancora armonizzate (aiuti di Stato, privacy…).</td></tr>
+    <tr><td><strong>Comparatistica</strong></td><td>Elaborazione di modelli attrattivi per i capitali internazionali; concorrenza tra ordinamenti (forte influenza americana).</td></tr>
+  </tbody>
+</table>
+
+<h3>1.1.3 Tendenze evolutive</h3>
+<ul>
+  <li>La distinzione diritto civile / diritto commerciale è oggi <strong>convenzionale e concettuale</strong>, non normativa.</li>
+  <li><strong>Diritto civile</strong>: tutela statica della ricchezza e della proprietà privata; efficacia inter partes.</li>
+  <li><strong>Diritto commerciale</strong>: utilizzo dinamico della ricchezza; tutela dei terzi che entrano in contatto con le imprese; favorisce la circolazione della ricchezza e il profitto.</li>
+  <li>Forte <strong>specializzazione interna</strong>: diritto bancario, assicurativo, finanziario, industriale, della concorrenza, della crisi d'impresa → fenomeno di <em>decodificazione</em>.</li>
+  <li>A livello UE: convergenza verso un diritto uniforme che garantisca certezza per tutte le imprese operanti nell'Unione.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="nozione">1.2 Nozione di imprenditore</h2>
+
+<div class="art">Art. 2082 c.c.: «È imprenditore chi esercita professionalmente una attività economica organizzata al fine della produzione o dello scambio di beni o di servizi.»</div>
+
+<h3>Requisiti della definizione</h3>
+<table>
+  <thead><tr><th>Requisito</th><th>Contenuto</th><th>Note / limiti</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Attività produttiva di beni o servizi</strong></td>
+      <td>Insieme di atti coordinati e finalizzati alla produzione o allo scambio; deve creare nuova ricchezza e immetterla nel mercato.</td>
+      <td>Non sono attività d'impresa: <em>mero godimento</em> (es. canone di locazione) né <em>mera speculazione</em> finanziaria. Serve esteriorizzazione verso il mercato.</td>
+    </tr>
+    <tr>
+      <td><strong>Economicità</strong></td>
+      <td>Programmazione <em>astratta</em> volta almeno alla copertura dei costi con i ricavi (reiterazione del ciclo produttivo). Attiene al <em>modo</em>, non allo scopo.</td>
+      <td>Non coincide con lo scopo di lucro. L'impresa in perdita rimane impresa. Mensa per poveri = non impresa (non mira a coprire costi). Imprese pubbliche e cooperative: imprese senza scopo di lucro.</td>
+    </tr>
+    <tr>
+      <td><strong>Organizzazione</strong></td>
+      <td>Impiego coordinato e programmato dei fattori produttivi (capitali e/o lavoro). Qualsiasi investimento compiuto per svolgere un'attività produttiva.</td>
+      <td>Sufficiente anche forma minima. Distingue l'imprenditore dal lavoratore autonomo. Fondamentale dalla riforma concorsuale 2019.</td>
+    </tr>
+    <tr>
+      <td><strong>Professionalità</strong></td>
+      <td>Stabilità e non occasionalità dell'attività (anche se non prevalente; ammesse attività stagionali).</td>
+      <td>Non richiede competenza specialistica né coincide con i professionisti intellettuali. La giurisprudenza valorizza la rilevanza economica anche di un solo affare complesso.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Impresa illecita</h3>
+<div class="def">L'illiceità non esclude la qualifica di imprenditore. L'art. 2082 è una norma chiusa: non esistono altri requisiti oltre ai quattro elencati (inclusa la liceità).</div>
+<ul>
+  <li>Si applicano le norme a <strong>tutela dei terzi e dei creditori</strong> (crisi/insolvenza) anche all'impresa illecita.</li>
+  <li>Non si applicano le norme che accordano vantaggi all'imprenditore (es. tutela del marchio, repressione concorrenza sleale).</li>
+  <li><strong>Eccezione</strong>: attività che richiedono autorizzazione amministrativa (es. banca senza autorizzazione Banca d'Italia) → solo norme a tutela dei terzi.</li>
+  <li><strong>Impresa di riciclaggio/mafiosa</strong>: difetta di economicità (i ricavi non coprono i costi) → non è impresa.</li>
+  <li>Attività illecita accompagnata da attività lecita → il soggetto <em>è</em> imprenditore.</li>
+</ul>
+
+<h3>Impresa e professioni intellettuali</h3>
+<div class="art">Art. 2238 c.c.: se l'esercizio della professione costituisce elemento di un'attività organizzata in forma d'impresa, si applicano le disposizioni sull'impresa in generale.</div>
+<ul>
+  <li>Le professioni intellettuali (avvocati, medici, notai…) sono escluse dallo statuto dell'imprenditore finché la prestazione corrisponde all'esercizio tradizionale della professione.</li>
+  <li>Diventa impresa quando la professione intellettuale è <em>elemento</em> di una diversa e più complessa attività organizzata (es. medico proprietario di casa di cura).</li>
+  <li>Abrogazione tariffe minime e legalizzazione delle società tra professionisti (l. 183/2011) rafforzano la convergenza verso la disciplina d'impresa.</li>
+</ul>
+
+<h3>Nozione di impresa nel diritto comunitario</h3>
+<div class="def">Per la CGUE, impresa è «qualsiasi entità economica che eserciti un'attività economica, a prescindere dallo status giuridico e dalle modalità di funzionamento»; qualsiasi attività che consista nell'offrire beni o servizi su un determinato mercato.</div>
+<ul>
+  <li>I requisiti codicistici (professionalità, organizzazione, economicità) hanno scarso rilievo per il diritto UE.</li>
+  <li>Il diritto antitrust nazionale (art. 1 l. 287/1990) recepisce la nozione comunitaria anche nei casi in cui il diritto UE non sarebbe direttamente applicabile.</li>
+  <li>Le libere professioni sono per il diritto UE semplici <em>imprese di servizi</em>.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="piccolo">1.3 Piccolo imprenditore</h2>
+
+<div class="art">Art. 2083 c.c.: «Sono piccoli imprenditori i coltivatori diretti del fondo, gli artigiani, i piccoli commercianti e coloro che esercitano un'attività professionale organizzata prevalentemente con il lavoro proprio e dei componenti della famiglia.»</div>
+
+<div class="def">Criterio generale: l'impresa è piccola quando è organizzata <strong>prevalentemente col lavoro proprio</strong> del titolare ed eventualmente dei suoi familiari. Le tre categorie tipizzate sono esemplificazioni.</div>
+
+<h3>Valutazione della prevalenza</h3>
+<ul>
+  <li>Va giudicata sia in senso <strong>quantitativo</strong> (ore di lavoro) che <strong>qualitativo</strong> (valore economico del lavoro rispetto al capitale investito).</li>
+  <li>È piccolo imprenditore anche chi, avvalendosi di collaboratori, rimane il soggetto che dà la <em>caratteristica essenziale</em> al prodotto o servizio.</li>
+</ul>
+
+<h3>L'artigiano (legge-quadro 443/1985)</h3>
+<ul>
+  <li>Esercita personalmente, professionalmente e in qualità di titolare, assumendo piena responsabilità e svolgendo in misura prevalente il proprio lavoro (anche manuale) nel processo produttivo.</li>
+  <li>Limiti massimi di dipendenti (art. 4 l. 443/1985):
+    <ul>
+      <li>18 (22 con apprendisti) — lavorazione non in serie</li>
+      <li>9 (12 con apprendisti) — lavorazione in serie</li>
+      <li>22 (40 con apprendisti) — lavorazioni artistiche, tradizionali, abbigliamento su misura</li>
+      <li>8 — trasporto</li>
+      <li>10 (14 con apprendisti) — costruzioni edili</li>
+    </ul>
+  </li>
+  <li>Non tutti gli artigiani ex l. 443/1985 sono piccoli imprenditori ex art. 2083: lo sono solo se il lavoro del titolare è prevalente.</li>
+  <li>Iscrizione all'albo provinciale: <strong>costitutiva</strong> ai fini delle agevolazioni regionali, non ai fini della qualifica civilistica.</li>
+  <li>Ammessa la società artigiana (s.r.l., s.n.c., cooperative), purché la maggioranza dei soci svolga in prevalenza lavoro personale nel processo produttivo e il lavoro abbia funzione preminente sul capitale.</li>
+</ul>
+
+<h3>Piccolo imprenditore vs. imprenditore minore (codice della crisi)</h3>
+<table>
+  <thead><tr><th></th><th>Piccolo imprenditore (art. 2083 c.c.)</th><th>Imprenditore minore (cod. crisi d'impresa)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Criterio</strong></td><td>Prevalenza qualitativa/quantitativa del lavoro proprio</td><td>Soglie numeriche oggettive (3 esercizi precedenti, tutte ricorrenti congiuntamente)</td></tr>
+    <tr><td><strong>Soglie</strong></td><td>—</td><td>Attivo patrimoniale &lt; 300.000 €; ricavi lordi &lt; 200.000 €; debiti totali &lt; 500.000 €</td></tr>
+    <tr><td><strong>Effetto principale</strong></td><td>Esonero da statuto dell'imprenditore commerciale (scritture contabili, registro imprese sezione ordinaria)</td><td>Esclusione dalla liquidazione giudiziale e dal concordato preventivo</td></tr>
+    <tr><td><strong>Base normativa</strong></td><td>Art. 2083 c.c. (abrogato art. 2221 c.c.)</td><td>Art. 2 lett. d cod. crisi (d.lgs. 14/2019)</td></tr>
+    <tr><td><strong>Presunzione</strong></td><td>—</td><td>Presunzione relativa di assoggettabilità alle procedure concorsuali; vinta da prova contraria al momento dell'istanza</td></tr>
+  </tbody>
+</table>
+<div class="exc">Le due nozioni sono <strong>scollegate</strong>: l'art. 2221 c.c. (esonero piccoli imprenditori dal fallimento) è stato abrogato dal cod. crisi. La nozione codicistica di piccolo imprenditore rileva oggi solo per l'esonero dalle scritture contabili obbligatorie e dall'iscrizione in sezione ordinaria.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="commerciale-agricolo">1.4 Imprenditore commerciale e imprenditore agricolo</h2>
+
+<h3>Imprenditore commerciale</h3>
+<div class="art">Art. 2195 c.c.: sono soggetti all'obbligo di iscrizione nel registro delle imprese gli imprenditori che esercitano:
+<ol>
+  <li>attività industriale diretta alla produzione di beni o servizi («industriale» = diversa da agricola);</li>
+  <li>attività intermediaria nella circolazione dei beni (interposizione nel mercato);</li>
+  <li>attività di trasporto per terra, acqua o aria;</li>
+  <li>attività bancaria o assicurativa;</li>
+  <li>altre attività ausiliarie delle precedenti (mediatori, agenti di commercio, agenzie di viaggi, pubblicitari…).</li>
+</ol></div>
+<ul>
+  <li>Il catalogo replica le attività di produzione e scambio di beni/servizi dell'art. 2082: il modello centrale del codice è l'imprenditore commerciale.</li>
+  <li>«Industriale» non implica necessariamente trasformazione fisica di materie prime: ricorre in ogni attività creatrice di utilità non derivante dalla forza genetica della natura.</li>
+  <li>Non esiste una terza specie di imprenditore «civile»: tutto ciò che non è agricolo è commerciale.</li>
+</ul>
+
+<h3>Imprenditore agricolo</h3>
+<div class="art">Art. 2135 c.c. (riformato nel 2001):
+<ul>
+  <li><strong>Attività principali</strong>: coltivazione del fondo, selvicoltura, allevamento di animali — intese come attività dirette alla cura e allo sviluppo di un <strong>ciclo biologico</strong> vegetale o animale, che utilizzano <em>o possono utilizzare</em> il fondo, il bosco o le acque.</li>
+  <li><strong>Attività connesse</strong>: manipolazione, conservazione, trasformazione, commercializzazione e valorizzazione dei prodotti <em>ottenuti prevalentemente</em> dall'attività principale; fornitura di beni o servizi mediante utilizzo prevalente di attrezzature/risorse dell'azienda agricola normalmente impiegate; agriturismo (l. 96/2006).</li>
+</ul></div>
+
+<table>
+  <thead><tr><th>Profilo</th><th>Attività principali</th><th>Attività connesse</th></tr></thead>
+  <tbody>
+    <tr><td>Natura</td><td>Intrinsecamente agricole</td><td>Intrinsecamente commerciali, ma neutralizzate dalla connessione</td></tr>
+    <tr><td>Elemento identificativo</td><td>Ciclo agrobiologico naturale (animale o vegetale)</td><td>Connessione soggettiva (stesso imprenditore) + connessione oggettiva (prodotti prevalentemente propri o attrezzature proprie)</td></tr>
+    <tr><td>Effetto</td><td>Qualifica di imprenditore agricolo</td><td>Non fa perdere la qualifica agricola</td></tr>
+    <tr><td>Uso del fondo</td><td>Non più necessario dal 2001: basta che in astratto sia possibile (es. insalata coltivata verticalmente)</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<h3>Confronto imprenditore commerciale vs. agricolo</h3>
+<table>
+  <thead><tr><th>Profilo</th><th>Commerciale</th><th>Agricolo</th></tr></thead>
+  <tbody>
+    <tr><td>Liquidazione giudiziale</td><td>Sì (se non minore)</td><td>No (può accedere a composizione negoziata, accordi di ristrutturazione, procedure da sovraindebitamento)</td></tr>
+    <tr><td>Scritture contabili obbligatorie</td><td>Sì</td><td>No</td></tr>
+    <tr><td>Registro delle imprese</td><td>Sezione ordinaria (efficacia dichiarativa)</td><td>Sezione speciale (efficacia dichiarativa dal 2001)</td></tr>
+    <tr><td>Agevolazioni fiscali/creditizie</td><td>No (regime ordinario)</td><td>Sì</td></tr>
+  </tbody>
+</table>
+
+<div class="exc">Ragione storica dell'esonero dell'imprenditore agricolo: <em>doppio rischio</em> (di mercato + climatico/ambientale) e necessità di tutela di beni essenziali per la sopravvivenza umana. Oggi in parte anacronistico, ma mantenuto.</div>
+
+<h3>Mutualità agricola</h3>
+<ul>
+  <li>Un ente associativo (es. cooperativa) può svolgere l'attività connessa per conto degli imprenditori agricoli soci: entrambi i soggetti mantengono la qualifica agricola, purché sia impiegata prevalentemente la produzione dei soci o siano forniti prevalentemente ad essi beni e servizi (d.lgs. 228/2001).</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="acquisto">1.5 Acquisto e titolarità dell'impresa — Responsabilità dell'imprenditore</h2>
+
+<h3>Inizio e fine dell'impresa</h3>
+<ul>
+  <li>L'impresa non nasce e non muore all'improvviso: richiede una serie di atti tra loro funzionalmente connessi.</li>
+  <li><strong>Criterio generale</strong>: l'attività organizzatrice è di regola sufficiente ad attribuire la qualità di imprenditore, anche prima dell'avvio della produzione.</li>
+  <li><strong>Fine</strong>: quando viene meno il <em>fine</em> della produzione o dello scambio di beni/servizi (non la mera disgregazione dell'organizzazione).</li>
+  <li><strong>Società</strong>: acquistano la qualità di imprenditore nel momento della costituzione; cessano con la cancellazione dal registro (presunzione assoluta per le società regolari, salvo cancellazione d'ufficio; relativa per le imprese individuali).</li>
+  <li>Ai fini concorsuali (art. 33 cod. crisi): la liquidazione giudiziale può essere aperta entro un anno dalla cessazione effettiva dell'attività.</li>
+</ul>
+
+<h3>Spendita del nome e imprenditore occulto</h3>
+<div class="def">Il criterio tradizionale di imputazione della responsabilità per i debiti d'impresa è la <strong>spendita del nome</strong> (dichiarazione di agire in nome e per conto del rappresentato).</div>
+<ul>
+  <li>Opinione prevalente (criticata): senza spendita del nome, i debiti restano in capo al prestanome, non all'imprenditore occulto.</li>
+  <li><strong>Critiche</strong>: iniquità verso i creditori; il rapporto con l'imprenditore occulto non è un mandato ex art. 1705 c.c.</li>
+  <li><strong>Art. 256 cod. crisi</strong>: estensione della liquidazione giudiziale al socio occulto di società palese o occulta → la spendita del nome non è sempre necessaria per l'imputazione della responsabilità.</li>
+  <li><strong>Art. 2561 c.c.</strong>: l'usufruttuario deve esercitare l'azienda sotto la ditta che la contraddistingue; se il contratto non è iscritto, alienante e nuovo gestore rispondono in solido.</li>
+</ul>
+
+<h3>Imprenditore incapace di agire</h3>
+<ul>
+  <li><strong>Minore</strong> (tramite genitori o tutore): può solo <em>continuare</em>, non iniziare, l'impresa commerciale; serve autorizzazione del tribunale su parere del giudice tutelare. L'autorizzazione copre qualsiasi atto d'impresa.</li>
+  <li><strong>Interdetto</strong>: stesse regole del minore.</li>
+  <li><strong>Inabilitato</strong>: può solo continuare (non iniziare), con autorizzazione del tribunale; l'autorizzazione lo abilita ad adottare autonomamente qualsiasi decisione gestionale.</li>
+  <li><strong>Minore emancipato</strong>: può sia continuare che <em>iniziare</em> l'impresa commerciale.</li>
+  <li><strong>Beneficiario di amministrazione di sostegno</strong>: valutazione caso per caso in base al decreto di nomina del giudice tutelare.</li>
+</ul>
+<div class="exc">Se il rappresentante legale gestisce l'impresa <em>senza</em> autorizzazione del tribunale: l'attività rimane imputata al rappresentante, non all'incapace → le sanzioni penali (bancarotta) e le incapacità personali colpiscono il rappresentante, non l'incapace.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="statuto">1.6 Statuto dell'imprenditore commerciale</h2>
+
+<div class="def">Lo statuto dell'imprenditore commerciale è il complesso di norme che si applicano esclusivamente all'imprenditore commerciale non piccolo (e non agricolo), articolato in quattro segmenti: (1) iscrizione obbligatoria al registro delle imprese, (2) tenuta obbligatoria delle scritture contabili, (3) rappresentanza commerciale, (4) soggezione alle procedure concorsuali.</div>
+
+<h3>1. Registro delle imprese</h3>
+<ul>
+  <li>Istituito nel 1998 (attuazione della disciplina del 1942), di regola provinciale.</li>
+  <li>Governato dal <strong>principio di tipicità/tassatività</strong> delle iscrizioni.</li>
+</ul>
+<table>
+  <thead><tr><th>Sezione</th><th>Chi si iscrive</th><th>Effetto dell'iscrizione</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Ordinaria</strong></td><td>Imprenditori commerciali individuali non piccoli; società commerciali; consorzi con attività esterna; enti pubblici economici; GEIE; società straniere con sede amministrativa o oggetto in Italia</td><td><strong>Dichiarativa</strong> (opponibilità ai terzi)</td></tr>
+    <tr><td><strong>Speciale</strong></td><td>Piccoli imprenditori; imprenditori agricoli; società semplici; imprenditori artigiani; società tra avvocati e professionisti; società che esercitano direzione e coordinamento</td><td><strong>Pubblicità notizia</strong> (per piccoli e artigiani); <strong>dichiarativa</strong> per imprese agricole (dal 2001); <strong>normativa</strong> per s.n.c.; <strong>costitutiva</strong> per società di capitali e cooperative</td></tr>
+  </tbody>
+</table>
+
+<div class="art">Art. 2193 c.c. — efficacia dell'iscrizione:
+<ul>
+  <li>I fatti non iscritti non sono opponibili ai terzi da chi era obbligato a iscriverli, salvo prova che i terzi ne avessero conoscenza.</li>
+  <li>L'ignoranza dei fatti iscritti non può essere opposta dai terzi dal momento dell'iscrizione.</li>
+</ul></div>
+
+<h3>2. Scritture contabili obbligatorie</h3>
+<div class="art">Art. 2214 c.c.: l'imprenditore commerciale (non piccolo) deve tenere il <strong>libro giornale</strong> e il <strong>libro degli inventari</strong>, nonché le altre scritture richieste dalla natura e dimensioni dell'impresa.</div>
+
+<table>
+  <thead><tr><th>Scrittura</th><th>Contenuto</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Libro giornale</strong></td><td>Registra cronologicamente tutte le operazioni (anche per tipologia accorpata, non necessariamente giornaliera)</td><td>Può essere cartaceo o digitale; numerazione progressiva; firma digitale e marcatura temporale annuale se informatico</td></tr>
+    <tr><td><strong>Libro degli inventari</strong></td><td>Scrittura statica: attività e passività aziendali e personali dell'imprenditore; utili e perdite per esercizio</td><td>Redatto all'inizio, chiuso entro 3 mesi dalla data prevista per la dichiarazione dei redditi; deve includere il patrimonio personale (art. 2740: responsabilità illimitata)</td></tr>
+    <tr><td><strong>Altre scritture</strong></td><td>Libro magazzino, libro cassa ecc., a seconda della natura/dimensioni</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Le scritture delle imprese individuali non sono pubbliche (diverso per le società).</li>
+  <li><strong>Efficacia probatoria</strong>: art. 2709 — fanno prova <em>contro</em> l'imprenditore; art. 2710 — tra imprenditori possono fare prova <em>a favore</em> di chi le ha regolarmente tenute (principio di prova).</li>
+  <li>Mancata o irregolare tenuta → <strong>bancarotta semplice</strong> (art. 323 cod. crisi); distruzione/falsificazione dolosa → <strong>bancarotta fraudolenta</strong> (art. 322 cod. crisi).</li>
+</ul>
+
+<h3>3. Rappresentanza commerciale</h3>
+<div class="def">Nel diritto commerciale gli ausiliari tipizzati (institore, procuratore, commesso) sono <em>necessariamente e inderogabilmente</em> titolari del potere di rappresentanza dell'imprenditore in virtù della loro posizione, senza necessità di procura. I loro poteri esterni sono coestensivi ai poteri interni di gestione.</div>
+
+<table>
+  <thead><tr><th>Ausiliare</th><th>Definizione</th><th>Poteri</th><th>Limiti opponibili ai terzi</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Institore</strong></td>
+      <td>Preposto all'esercizio di un'impresa o di una sede secondaria/ramo (art. 2203). È l'alter ego dell'imprenditore.</td>
+      <td>Tutti gli atti pertinenti all'esercizio dell'impresa; eccetto: <em>alienazione o ipoteca di beni immobili</em> senza espressa autorizzazione (limite legale, sempre opponibile).</td>
+      <td>Limiti ulteriori devono essere iscritti al Registro delle imprese per essere opponibili ai terzi. Non è possibile escludere in toto il potere di rappresentanza.</td>
+    </tr>
+    <tr>
+      <td><strong>Procuratore</strong></td>
+      <td>Collaboratore intermedio con rapporto continuativo, sovrintende a un dipartimento/settore (art. 2209).</td>
+      <td>Atti pertinenti all'esercizio dell'impresa nel suo settore (generale, ma circoscritto all'ambito di competenza).</td>
+      <td>Limiti opponibili se iscritti al Registro. Non si applica l'art. 2208 (doppia responsabilità): se il procuratore non spende il nome, il terzo non può agire contro l'imprenditore.</td>
+    </tr>
+    <tr>
+      <td><strong>Commesso</strong></td>
+      <td>A contatto con la clientela ordinaria (art. 2210).</td>
+      <td>Atti che ordinariamente comporta la specie delle operazioni di cui è incaricato; ricezione di dichiarazioni sull'esecuzione del contratto e reclami; limitata rappresentanza processuale cautelare.</td>
+      <td>Non può esigere il prezzo di merci non consegnate; non può concedere dilazioni o sconti non d'uso, salvo espressa autorizzazione. Limiti spesso affissi nei locali.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="art">Art. 2208 c.c. — responsabilità personale dell'institore che non spende il nome: l'institore è personalmente obbligato; tuttavia il terzo può agire anche contro l'imprenditore per gli atti pertinenti all'esercizio dell'impresa (<em>doppia responsabilità</em>). Si ammette la <em>contemplatio domini presunta</em> per gli atti rientranti nell'ordinario esercizio dell'impresa.</div>
+
+<h3>4. Soggezione alle procedure concorsuali (cod. crisi, d.lgs. 14/2019)</h3>
+<h3>Presupposti oggettivi</h3>
+<table>
+  <thead><tr><th>Stato</th><th>Definizione</th><th>Strumenti accessibili</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Pre-crisi</strong></td><td>Squilibrio patrimoniale/economico-finanziario che rende <em>probabile</em> la crisi o l'insolvenza</td><td>Composizione negoziata della crisi (tutti gli imprenditori, commerciali e agricoli)</td></tr>
+    <tr><td><strong>Crisi</strong></td><td>Inadeguatezza dei flussi di cassa prospettici a far fronte alle obbligazioni nei successivi 12 mesi (art. 2 lett. a)</td><td>Piano attestato di risanamento; accordi di ristrutturazione; convenzioni di moratoria; concordato preventivo; piano di ristrutturazione soggetto a omologazione</td></tr>
+    <tr><td><strong>Insolvenza</strong></td><td>Stato irreversibile di impotenza economico-finanziaria: inadempimenti o altri fatti esteriori che dimostrano incapacità di soddisfare regolarmente le obbligazioni (art. 2 lett. b)</td><td>Liquidazione giudiziale (+ tutti gli strumenti della crisi)</td></tr>
+  </tbody>
+</table>
+
+<h3>Principali strumenti</h3>
+<ul>
+  <li><strong>Composizione negoziata</strong>: percorso volontario, negoziale e stragiudiziale; esperto indipendente nominato dalla Camera di commercio.</li>
+  <li><strong>Piano di risanamento attestato</strong>: redatto unilateralmente dall'imprenditore con l'assistenza di un professionista attestatore.</li>
+  <li><strong>Accordi di ristrutturazione dei debiti</strong>: tra imprenditore e maggioranza dei creditori; creditori estranei hanno diritto al pagamento integrale entro 120 giorni dall'omologazione.</li>
+  <li><strong>Concordato preventivo</strong>: accordo tra imprenditore e creditori (che votano a maggioranza per entità di credito), omologato dall'autorità giudiziaria. Può essere liquidatorio o in continuità aziendale (diretta o indiretta). Favor legis per la continuità.</li>
+  <li><strong>Liquidazione giudiziale</strong>: procedura giudiziale, officiosa, universale (oggettiva e soggettiva); par condicio creditorum. Fasi: dichiarativa → accertamento del passivo → liquidazione dell'attivo → distribuzione → chiusura.</li>
+  <li><strong>Esdebitazione</strong> (art. 278 cod. crisi): liberazione dai debiti residui verso creditori concorsuali non soddisfatti, alla chiusura della procedura o dopo 3 anni dall'apertura. Non estingue l'obbligazione verso coobbligati, fideiussori, obbligati in regresso.</li>
+</ul>
+
+<div class="exc">Il termine «fallimento» è stato eliminato dal cod. crisi (d.lgs. 14/2019, entrato in vigore il 15 luglio 2022) e sostituito con «liquidazione giudiziale», per rimuovere lo stigma sociale associato alla dichiarazione di fallimento.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="azienda">1.7 Azienda</h2>
+
+<div class="art">Art. 2555 c.c.: «L'azienda è il complesso dei beni organizzati dall'imprenditore per l'esercizio dell'impresa.»</div>
+
+<h3>Caratteri dell'azienda</h3>
+<ul>
+  <li><strong>Azienda ≠ impresa</strong>: rapporto di mezzo a fine. L'impresa è l'attività; l'azienda è l'apparato dei mezzi produttivi.</li>
+  <li>I beni possono essere eterogenei e detenuti a qualsiasi titolo (non necessariamente di proprietà).</li>
+  <li>Elemento essenziale: l'<strong>organizzazione</strong> impressa dall'imprenditore — il valore aggiunto rispetto ai beni considerati singolarmente.</li>
+  <li><strong>Avviamento oggettivo</strong>: capacità superiore del complesso organizzato di beni (quid pluris rispetto alla somma dei singoli elementi); mantenuto grazie al principio di unitarietà nella circolazione.</li>
+  <li>I singoli elementi possono cambiare nel tempo; l'azienda rimane la stessa.</li>
+</ul>
+
+<h3>Circolazione dell'azienda</h3>
+
+<h3>Forma</h3>
+<ul>
+  <li>Nessuna forma tipica ad substantiam per la cessione in quanto tale: la forma dipende dalla causa del trasferimento (donazione → atto pubblico) e dalla natura dei beni (beni immobili → forma scritta).</li>
+  <li><strong>Forma ad probationem</strong>: la cessione deve essere provata per iscritto (art. 2556 co. 1).</li>
+  <li>Per le imprese soggette a registrazione: il contratto deve essere depositato in forma pubblica o scrittura privata autenticata per l'iscrizione al Registro delle imprese entro 30 giorni (a cura del notaio).</li>
+</ul>
+
+<h3>Successione nei contratti (art. 2558)</h3>
+<div class="def">L'acquirente dell'azienda subentra automaticamente nei contratti stipulati per l'esercizio dell'azienda <strong>che non abbiano carattere personale</strong>, senza necessità del consenso del terzo contraente (deroga all'art. 1406 c.c.).</div>
+<ul>
+  <li>Contratti a carattere personale: quelli in cui l'identità o le qualità personali del contraente siano state determinanti nel consenso (rilevano sia cedente che ceduto).</li>
+  <li>Il terzo contraente ceduto può recedere entro <strong>3 mesi dalla notizia del trasferimento</strong>, se sussiste giusta causa; in tal caso l'alienante risponde del danno se era in mala fede nella scelta dell'acquirente.</li>
+  <li>Il meccanismo vale anche per usufruttuario e affittuario per la durata del loro rapporto.</li>
+</ul>
+
+<h3>Crediti e debiti aziendali</h3>
+<table>
+  <thead><tr><th></th><th>Crediti (art. 2559)</th><th>Debiti (art. 2560)</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Efficacia verso terzi</strong></td>
+      <td>Dal momento dell'iscrizione del trasferimento al Registro delle imprese (senza necessità di notifica al debitore). Il debitore ceduto è liberato se paga in buona fede all'alienante.</td>
+      <td>L'acquirente è corresponsabile in solido con l'alienante dei soli debiti <em>aziendali anteriori alla cessione risultanti dalle scritture contabili obbligatorie</em>.</td>
+    </tr>
+    <tr>
+      <td><strong>Posizione dell'alienante</strong></td>
+      <td>Cede i crediti automaticamente (ma può comunicarlo ai debitori)</td>
+      <td>Rimane responsabile salvo liberazione espressa da parte dei creditori (consenso alla cessione ≈ consenso alla liberazione).</td>
+    </tr>
+    <tr>
+      <td><strong>Eccezione in liquidazione giudiziale</strong></td>
+      <td>—</td>
+      <td>Art. 214 cod. crisi: l'acquirente nell'ambito della liquidazione giudiziale non risponde dei debiti anteriori, salvo diversa convenzione.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Divieto di concorrenza (art. 2557)</h3>
+<div class="def">Chi aliena l'azienda deve astenersi per <strong>5 anni</strong> dall'iniziare una nuova impresa che per oggetto, ubicazione o altre circostanze sia idonea a <em>sviare la clientela</em> dell'azienda ceduta (tutela dell'avviamento soggettivo).</div>
+<ul>
+  <li>Le parti possono ampliare il divieto (per oggetto o ubicazione) ma non superare i 5 anni né impedire ogni attività professionale dell'alienante.</li>
+  <li>Le parti possono ridurre o escludere il divieto.</li>
+  <li>Il divieto si applica anche in caso di usufrutto e affitto (alienante durante l'affitto; affittuario al termine).</li>
+  <li>Applicabile anche alle vendite nella liquidazione giudiziale (art. 214 cod. crisi rimanda all'art. 2556).</li>
+  <li>Per le aziende agricole: si applica solo per le attività connesse, e solo se possibile uno sviamento di clientela (art. 2557 ult. co.).</li>
+</ul>
+
+<h3>Patto di famiglia</h3>
+<ul>
+  <li>Contratto (atto pubblico ad substantiam) con cui l'imprenditore assegna l'azienda (o un ramo) a uno o più discendenti, per pianificare il passaggio generazionale inter vivos.</li>
+  <li>Effetti traslativi immediati; esonera gli assegnatari dal rischio di azioni di riduzione per lesione di legittima o di collazione.</li>
+  <li>Gli assegnatari devono liquidare (nel patto o in atto successivo) gli altri legittimari, salvo rinuncia espressa di questi ultimi.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="segni">1.8 Segni distintivi dell'imprenditore</h2>
+
+<div class="def">I segni distintivi permettono all'imprenditore di differenziarsi sul mercato e di fidelizzare la clientela. Sono una categoria aperta. Il codice civile ne disciplina tre tipici: ditta, insegna, marchio. Il codice della proprietà industriale (d.lgs. 30/2005) li sistematizza distinguendo tra diritti <em>titolati</em> (acquistati con registrazione/brevetto) e <em>non titolati</em> (acquistati con l'uso).</div>
+
+<div class="art">Art. 22 c.p.i. (unitarietà dei segni distintivi): è vietato adottare come ditta, denominazione o ragione sociale, insegna e nome a dominio un segno uguale o simile all'altrui marchio registrato.</div>
+
+<h3>Ditta (art. 2563 c.c.)</h3>
+<ul>
+  <li>Nome commerciale dell'imprenditore; deve contenere il nome o la sigla della persona fisica, ovvero la ragione/denominazione sociale.</li>
+  <li>In caso di omonimia: il secondo utente deve aggiungere un elemento distintivo.</li>
+  <li><strong>Diritto di uso esclusivo</strong>: non può essere uguale o simile alla ditta già usata da altro imprenditore per attività che producono beni/servizi simili.</li>
+  <li><strong>Non è trasferibile separatamente dall'azienda</strong> (ma il trasferimento dell'azienda non comporta automaticamente cessione della ditta).</li>
+  <li>Chi prende in usufrutto o affitto un'azienda ha l'obbligo di continuare a esercitarla <em>sotto la ditta originaria</em> (artt. 2561–2562).</li>
+</ul>
+
+<h3>Insegna (art. 2568 c.c.)</h3>
+<ul>
+  <li>Contraddistingue i <em>locali</em> dove l'impresa esercita la sua attività (distingue l'azienda, non la persona).</li>
+  <li>Deve rispettare norme imperative, ordine pubblico, buon costume.</li>
+  <li>Non può essere uguale alla ditta o ad altri segni distintivi già usati da altri imprenditori.</li>
+</ul>
+
+<h3>Marchio (art. 2569 c.c. e d.lgs. 30/2005)</h3>
+<div class="def">Il marchio contraddistingue i beni o servizi di un'impresa da quelli delle imprese concorrenti. Funzione essenziale oggi: indicare la <strong>provenienza imprenditoriale</strong> del prodotto (non più la qualità intrinseca). Tutela l'imprenditore dalla concorrenza sleale, non il consumatore dalla qualità.</div>
+
+<h3>Modi di acquisto del marchio</h3>
+<table>
+  <thead><tr><th></th><th>Registrazione</th><th>Uso di fatto</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Come si acquista</strong></td><td>Deposito presso UIBM (Ufficio italiano brevetti e marchi)</td><td>Uso reiterato del segno sui prodotti fino al raggiungimento di notorietà</td></tr>
+    <tr><td><strong>Notorietà generale</strong></td><td>—</td><td>Impedisce la registrazione dello stesso segno da parte di terzi (mancanza di novità)</td></tr>
+    <tr><td><strong>Notorietà locale</strong></td><td>—</td><td>Il pre-usante può continuare l'uso nel territorio; un terzo può registrare il segno con tutela nazionale: convivenza nel territorio tra marchio registrato e marchio di fatto</td></tr>
+  </tbody>
+</table>
+
+<h3>Requisiti per la registrazione</h3>
+<table>
+  <thead><tr><th>Requisito</th><th>Contenuto</th><th>Conseguenza del difetto</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Capacità distintiva</strong></td><td>Il segno deve distinguere i prodotti/servizi di un'impresa da quelli di altre. Esclusi: segni di uso comune, denominazioni generiche, indicazioni descrittive (specie, qualità, quantità, provenienza geografica…). <em>Marchi deboli</em>: richiamano il prodotto → tutela ridotta. <em>Secondary meaning</em>: segno inizialmente generico che acquisisce capacità distintiva per uso prolungato.</td><td>Nullità del marchio (salvo convalida per uso quinquennale tollerato)</td></tr>
+    <tr><td><strong>Liceità</strong></td><td>Non contrarietà a norme imperative, ordine pubblico, buon costume, diritti altrui (diritto d'autore, ritratto, nome altrui senza consenso — tranne se non è persona famosa)</td><td>Nullità</td></tr>
+    <tr><td><strong>Novità</strong></td><td>Il segno non deve essere già usato come marchio, ditta, insegna ecc. da altri. Il marchio di fatto con notorietà generale toglie novità; il marchio di fatto locale non la toglie. I marchi <em>rinomati</em> impediscono registrazioni analoghe anche per prodotti non affini.</td><td>Nullità</td></tr>
+    <tr><td><strong>Originalità</strong></td><td>Il segno non può coincidere con la denominazione stessa del prodotto (monopolio di fatto)</td><td>Nullità</td></tr>
+    <tr><td><strong>Non ingannevolezza</strong></td><td>Il segno non deve ingannare il pubblico su natura, provenienza, qualità, valore, funzioni del prodotto</td><td>Nullità</td></tr>
+  </tbody>
+</table>
+
+<h3>Segni non grafici registrabili</h3>
+<ul>
+  <li><strong>Suoni</strong>: melodie, jingles (non rumori puri).</li>
+  <li><strong>Forme di confezione</strong>: es. bottiglia Coca-Cola, boccette di profumo (se non banali).</li>
+  <li><strong>Forme del prodotto</strong>: escluse se imposte dalla natura del prodotto; se necessarie per ottenere un risultato tecnico (brevettabilità ≠ marchiabilità, durata diversa); se danno valore sostanziale al prodotto (es. Crocs — acquistate per la forma, non per la funzione).</li>
+  <li><strong>Odori</strong>: marchi olfattivi registrabili.</li>
+  <li><strong>Movimenti</strong>: es. apertura porte Lamborghini; intro Pixar (suono + movimento).</li>
+</ul>
+
+<h3>Diritto di esclusiva (art. 20 c.p.i.)</h3>
+<ul>
+  <li>Il titolare può vietare ai terzi l'uso di:
+    <ol>
+      <li>segno <em>identico</em> per prodotti/servizi <em>identici</em>;</li>
+      <li>segno identico o simile per prodotti affini, se c'è <strong>rischio di confusione</strong> (anche rischio di associazione);</li>
+      <li>segno identico o simile per prodotti anche non affini, se il marchio è <strong>rinomato</strong> e l'uso consente di trarre vantaggio indebito dalla rinomanza o reca pregiudizio al marchio.</li>
+    </ol>
+  </li>
+  <li>Deve essere usato entro <strong>5 anni</strong> dalla registrazione; l'interruzione per un quinquennio comporta decadenza dall'esclusiva.</li>
+  <li><strong>Eccezioni</strong>: uso del proprio nome/indirizzo; indicazioni relative alla natura dei prodotti; uso per indicare la destinazione di prodotti altrui (es. pezzi di ricambio); prodotti immessi in commercio in UE dal titolare o dai suoi licenziatari (<em>esaurimento comunitario</em>).</li>
+  <li><strong>Volgarizzazione</strong>: il marchio diventa nome comune del prodotto → decadenza del diritto, se vi è tolleranza consapevole del titolare e utilizzo anche da parte dei concorrenti.</li>
+</ul>
+
+<h3>Licenza di marchio</h3>
+<ul>
+  <li>Il titolare può concedere licenza esclusiva o non esclusiva a uno o più licenziatari.</li>
+  <li>Il licenziatario deve usare il marchio per contraddistinguere prodotti/servizi eguali a quelli del titolare; il licenziante deve garantire l'uniformità qualitativa.</li>
+  <li>Dal trasferimento o dalla licenza non deve derivare inganno nei caratteri essenziali dei prodotti.</li>
+</ul>
+
+<h3>Marchi collettivi, europei e internazionali</h3>
+<table>
+  <thead><tr><th>Tipo</th><th>Titolare</th><th>Funzione</th><th>Come si ottiene</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Collettivo</strong></td><td>Società, consorzi, associazioni, enti pubblici</td><td>Garantisce origine, natura o qualità di prodotti/servizi di più imprenditori licenziatari</td><td>Registrazione con apposito regolamento d'uso</td></tr>
+    <tr><td><strong>Europeo</strong></td><td>Qualsiasi soggetto</td><td>Tutela unitaria in tutti gli SM UE</td><td>Deposito diretto all'EUIPO</td></tr>
+    <tr><td><strong>Internazionale</strong></td><td>Titolare di marchio nazionale o europeo</td><td>Fascio di marchi nazionali nei Paesi aderenti all'accordo/protocollo di Madrid</td><td>Estensione tramite OMPI</td></tr>
+  </tbody>
+</table>
+
+<p>Il marchio nazionale ha durata <strong>10 anni</strong> dalla data di deposito, rinnovabile indefinitamente.</p>
+  </div>
+
+  <!-- ══ SEZIONE 2 ══ -->
+  <div id="s2" class="section">
+    <button class="back-btn" onclick="goHome()">← Torna al menu</button>
+<h1>2. Società</h1>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#introduzione">Introduzione storica e contratto di società</a></li>
+    <li><a href="#definizioni">Definizioni: elementi essenziali del contratto</a></li>
+    <li><a href="#lucrative">Società lucrative: tipi, distinzioni, amministrazione</a></li>
+    <li><a href="#responsabilita">Responsabilità per le obbligazioni sociali</a></li>
+    <li><a href="#scioglimento-vincolo">Scioglimento del vincolo particolare del socio</a></li>
+    <li><a href="#scioglimento-societa">Scioglimento della società</a></li>
+  </ol>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="introduzione">2.1 Introduzione storica</h2>
+
+<h3>Origini medievali</h3>
+<ul>
+  <li><strong>Compagnia</strong> (≈ anno 1000): patrimonio familiare unitario gestito dai mercanti di famiglia; ciascun familiare poteva spendere il nome della famiglia e impegnarne il patrimonio. <em>Cum panis</em> → compagnia. Antecedente della s.n.c.</li>
+  <li><strong>Commenda</strong>: nasce per aggirare il divieto canonico di prestare denaro ad interesse. Un soggetto conferisce capitali, un altro gestisce il traffico commerciale; il finanziatore ricava utili (non interessi). Antecedente della società in accomandita semplice.</li>
+  <li><strong>Carati</strong>: suddivisione della proprietà delle navi in frazioni uguali cedibili a terzi → prime forme di azione. Origine delle borse valori (famiglia Beurs).</li>
+</ul>
+
+<h3>Evoluzione normativa</h3>
+<ul>
+  <li>Codice di Commercio napoleonico (1807): le società diventano questione normativa, accessibile a tutti senza privilegio regio.</li>
+  <li>Codice civile 1942 (libro V): unificazione; vengono mantenute s.s., s.n.c., s.a.s., s.p.a. (già "società anonima"), s.a.p.a.; viene creata ex novo la <strong>s.r.l.</strong> per attività imprenditoriali minori in regime di responsabilità limitata senza raccolta pubblica di risparmio.</li>
+</ul>
+
+<h3>Numeri (ordine di grandezza)</h3>
+<ul>
+  <li>~4,5 milioni di imprese italiane: ~2,5 mln individuali; ~500–600 mila società di persone; ~50.000 cooperative; ~1 milione di società di capitali (di cui ~25.000 s.p.a., restanti s.r.l.; quotate sul mercato principale ~250).</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="definizioni">2.2 Definizioni: elementi essenziali del contratto di società</h2>
+
+<div class="art">Art. 2247 c.c.: «Con il contratto di società due o più persone conferiscono beni o servizi per l'esercizio in comune di una attività economica allo scopo di dividerne gli utili.»</div>
+
+<div class="def">Il contratto di società è un contratto associativo, plurilaterale con comunione di scopo. La causa è il <strong>lucro soggettivo</strong>: produrre utili e dividerli tra i soci. S.p.a. e s.r.l. possono nascere anche da atto unilaterale.</div>
+
+<h3>Elementi essenziali</h3>
+
+<h3>1. Conferimenti</h3>
+<ul>
+  <li>Prestazione alla quale si obbliga ciascun socio: si diventa soci attraverso il conferimento.</li>
+  <li>I conferimenti formano il <strong>fondo comune</strong>, che diviene il patrimonio imputato alla società.</li>
+  <li>Non è necessaria l'equivalenza dei conferimenti: la differenza di valore corrisponde a una diversa quota di partecipazione.</li>
+  <li>Vincolo di destinazione: i soci non possono chiedere lo scioglimento del fondo comune né i loro creditori possono aggredirlo direttamente; il vincolo si scioglie solo con recesso (nei suoi limiti).</li>
+  <li>Solo nelle società di persone (e a certe condizioni nelle s.r.l.) è possibile conferire <em>prestazioni d'opera o di servizi</em>.</li>
+</ul>
+<div class="art">Art. 2253 c.c. (società semplice): se i conferimenti non sono determinati, si presume che i soci siano obbligati a conferire, in parti eguali, quanto necessario per il conseguimento dell'oggetto sociale.</div>
+
+<h3>2. Esercizio in comune dell'attività economica</h3>
+<ul>
+  <li><strong>Società di persone</strong>: i soci gestiscono davvero in comune; ciascun socio è di regola amministratore.</li>
+  <li><strong>Società di capitali (s.p.a., s.a.p.a.) e s.r.l. strutturate come s.p.a.</strong>: i soci non hanno potere diretto sull'impresa; l'assemblea nomina e revoca gli amministratori (potere mediato).</li>
+  <li>L'<strong>oggetto sociale</strong> determina il "che cosa" fa la società; il "come" è determinato dal tipo sociale.</li>
+  <li>Quasi sempre l'attività economica sarà attività d'impresa; può eccezionalmente mancare la professionalità (società occasionale).</li>
+</ul>
+
+<h3>3. Scopo di dividere gli utili</h3>
+<ul>
+  <li>I soci <strong>non possono escludere per statuto</strong> la divisione degli utili: la società è per definizione lucrativa; altrimenti si tratta di associazione.</li>
+  <li>Una volta conseguiti, i soci possono destinare liberamente i propri utili (es. beneficenza): è un motivo soggettivo irrilevante per il diritto.</li>
+  <li>L'assemblea può decidere di non distribuire tutti gli utili (accantonamento a riserva), ma non può escluderla a priori in via statutaria.</li>
+  <li><strong>Divieto del patto leonino</strong> (art. 2265, applicato estensivamente a tutti i tipi): è nullo il patto con il quale uno o più soci sono esclusi da ogni partecipazione agli utili o alle perdite.</li>
+</ul>
+
+<h3>Scopi alternativi al lucro</h3>
+<table>
+  <thead><tr><th>Scopo</th><th>Tipo</th><th>Contenuto</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Mutualistico</strong></td><td>Cooperative</td><td>Procurare ai soci beni, servizi o occasioni di lavoro a condizioni più favorevoli di quelle di mercato</td></tr>
+    <tr><td><strong>Consortile</strong></td><td>Consorzi tra imprenditori</td><td>Mutualità tra imprenditori per disciplinare o svolgere fasi delle imprese</td></tr>
+    <tr><td><strong>Misto (benefit)</strong></td><td>Società benefit</td><td>Accanto allo scopo di lucro, finalità di beneficio comune previste nell'oggetto sociale (es. interessi ambientali, comunitari)</td></tr>
+  </tbody>
+</table>
+
+<h3>Principio di tipicità</h3>
+<div class="art">Art. 2249 c.c.: le società che hanno per oggetto l'esercizio di un'attività commerciale devono costituirsi secondo uno dei tipi regolati dalla legge.</div>
+<ul>
+  <li>I tipi sociali sono tassativi; non è possibile creare società atipiche.</li>
+  <li>È ammessa l'aggiunta di clausole atipiche nell'ambito di un tipo regolato.</li>
+</ul>
+
+<h3>Società professionali</h3>
+<ul>
+  <li>L'art. 2247 parla di "attività economica", non di attività d'impresa: vi rientrano anche attività professionali e artistiche.</li>
+  <li>Evoluzione normativa: società tra avvocati (2001, riformate 2013); società tra professionisti (s.t.p.) introdotte dalla l. 183/2011, iscritte in apposita sezione speciale del Registro delle imprese.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="lucrative">2.3 Società lucrative: tipi, distinzioni, amministrazione</h2>
+
+<h3>Classificazione</h3>
+<table>
+  <thead><tr><th></th><th>Società di persone (personalistiche)</th><th>Società di capitali (capitalistiche)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Tipi</strong></td><td>Società semplice (s.s.); società in nome collettivo (s.n.c.); società in accomandita semplice (s.a.s.)</td><td>Società per azioni (s.p.a.); società a responsabilità limitata (s.r.l.); società in accomandita per azioni (s.a.p.a.)</td></tr>
+    <tr><td><strong>Responsabilità</strong></td><td>Patrimonio sociale + patrimonio personale dei soci (illimitata e solidale per i soci illimitatamente responsabili)</td><td>Solo patrimonio sociale; i soci rispondono nei limiti del conferimento</td></tr>
+    <tr><td><strong>Amministrazione</strong></td><td>Ciascun socio è di regola amministratore (chi rischia decide)</td><td>L'assemblea nomina/revoca gli amministratori; i soci hanno potere mediato</td></tr>
+    <tr><td><strong>Persona</strong></td><td>Infungibile: la quota è di regola intrasferibile senza consenso unanime</td><td>Fungibile: le partecipazioni (azioni/quote) sono di regola liberamente trasferibili</td></tr>
+    <tr><td><strong>Attività consentita</strong></td><td>S.s.: solo non commerciale (agricola o professionale). S.n.c. e s.a.s.: qualsiasi attività economica</td><td>Qualsiasi attività economica</td></tr>
+  </tbody>
+</table>
+
+<h3>Modalità di amministrazione nelle società di persone</h3>
+<div class="def">Per tutte le società di persone, l'amministrazione si compone di due profili: <strong>gestorio</strong> (potere di decidere) e <strong>negoziale</strong> (potere di rappresentanza/firma). Essi coincidono per legge, salvo diversa previsione del contratto sociale.</div>
+
+<table>
+  <thead><tr><th>Modello</th><th>Funzionamento</th><th>Strumento correttivo</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Disgiuntivo</strong> (regola legale suppletiva)</td>
+      <td>Ciascun socio amministratore può compiere da solo qualsiasi atto riguardante la società</td>
+      <td><strong>Diritto di veto</strong>: ogni socio amministratore può opporsi all'operazione che un altro voglia compiere, <em>prima</em> che sia compiuta; la maggioranza (calcolata in base alla spettanza degli utili) decide sull'opposizione</td>
+    </tr>
+    <tr>
+      <td><strong>Congiuntivo all'unanimità</strong></td>
+      <td>Ogni decisione richiede il consenso di tutti gli amministratori</td>
+      <td>Deroga per atti urgenti: in caso di urgenza ciascun amministratore recupera potere disgiuntivo (art. 2258 co. 3)</td>
+    </tr>
+    <tr>
+      <td><strong>Congiuntivo a maggioranza</strong></td>
+      <td>Le scelte si assumono con la maggioranza dei consensi degli amministratori (calcolata in base agli utili). Deve essere previsto esplicitamente.</td>
+      <td>Stessa deroga d'urgenza</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Nomina e revoca degli amministratori</h3>
+<ul>
+  <li><strong>Amministratori nominati con il contratto sociale</strong>: revocabili solo per giusta causa (art. 2259); in mancanza serve il consenso di tutti i soci (art. 2252).</li>
+  <li><strong>Amministratori nominati con atto separato</strong>: revocabili secondo le norme del mandato (congruo preavviso, senza giusta causa); dubbio se serva unanimità o maggioranza.</li>
+  <li>In ogni caso, la revoca per giusta causa può essere chiesta giudizialmente da ciascun socio (art. 2259 co. 3).</li>
+</ul>
+
+<div class="exc">Amministratori non soci: ammessi nelle s.n.c. (tutti i soci rispondono comunque); non ammessi nelle società semplici (porterebbe a società atipica) né nelle s.a.s. (gli amministratori devono essere soci accomandatari).</div>
+
+<h3>Ripartizione degli utili e delle perdite</h3>
+<div class="art">Art. 2263 c.c.: le parti spettanti ai soci nei guadagni e nelle perdite si presumono proporzionali ai conferimenti. Se il valore dei conferimenti non è determinato, si presumono eguali. La parte del socio d'opera è fissata dal giudice secondo equità se non determinata dal contratto.</div>
+<ul>
+  <li>Il diritto agli utili sorge con l'approvazione del rendiconto/bilancio che accerta l'eccedenza dell'attivo sul passivo.</li>
+  <li>Per reinvestire gli utili è necessario che ciascun socio rinunci individualmente al proprio diritto di credito.</li>
+  <li>Se un socio paga per intero un debito sociale: ha regresso per intero verso la società, poi regresso pro quota verso gli altri soci (solidarietà).</li>
+</ul>
+
+<h3>Opponibilità della rappresentanza ai terzi</h3>
+<table>
+  <thead><tr><th>Tipo di società</th><th>Regola</th></tr></thead>
+  <tbody>
+    <tr><td>S.n.c. regolare</td><td>L'iscrizione rende opponibile ai terzi la rappresentanza e i suoi limiti</td></tr>
+    <tr><td>S.n.c. irregolare / s.s.</td><td>I limiti non sono opponibili ai terzi salvo prova che ne erano a conoscenza; si presume che ciascun socio che agisce per la società abbia la rappresentanza sociale (art. 2297 co. 2)</td></tr>
+  </tbody>
+</table>
+
+<div class="exc">Una clausola contrattuale che limiti la responsabilità di un socio vale solo nei rapporti interni (ripartizione delle perdite tra soci); nei rapporti esterni i creditori possono sempre rivolgersi a qualunque socio illimitatamente responsabile.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="responsabilita">2.4 Responsabilità per le obbligazioni sociali</h2>
+
+<table>
+  <thead><tr><th>Tipo</th><th>Regola di responsabilità</th><th>Beneficio di escussione</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Società semplice</strong></td>
+      <td>Patrimonio sociale + necessariamente illimitata per i soci amministratori; eventualmente limitata per i soci non amministratori se previsto dal contratto</td>
+      <td>Facoltativo: il socio richiesto del pagamento può indicare beni sociali agevolmente liquidabili (art. 2268); il creditore può però rivolgersi direttamente a qualsiasi socio</td>
+    </tr>
+    <tr>
+      <td><strong>S.n.c. irregolare</strong></td>
+      <td>Stesse regole della società semplice</td>
+      <td>Facoltativo (come s.s.)</td>
+    </tr>
+    <tr>
+      <td><strong>S.n.c. regolare</strong></td>
+      <td>Patrimonio sociale + tutti i soci illimitatamente e solidalmente (i soci sono fideiussori ex lege)</td>
+      <td>Obbligatorio per legge: i creditori devono prima escutere il patrimonio sociale; solo dopo possono rivolgersi ai soci</td>
+    </tr>
+    <tr>
+      <td><strong>Società di capitali</strong></td>
+      <td>Solo patrimonio sociale; i soci rispondono nei limiti del conferimento</td>
+      <td>Non applicabile (autonomia patrimoniale perfetta)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="art">Art. 2269 c.c.: chi entra a far parte di una società già costituita risponde con gli altri soci per le obbligazioni sociali <strong>anteriori</strong> all'acquisto della qualità di socio.</div>
+
+<h3>Creditori particolari dei soci</h3>
+<table>
+  <thead><tr><th>Tipo di società</th><th>Poteri del creditore personale del socio</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>S.s. / s.n.c. irregolare</td>
+      <td>Non può aggredire il patrimonio sociale direttamente. Può: (1) ottenere dal giudice gli utili spettanti al socio; (2) compiere atti conservativi sulla futura quota di liquidazione; (3) dimostrando l'insufficienza del patrimonio del socio, <strong>domandare la liquidazione della quota</strong> del socio debitore (= esclusione)</td>
+    </tr>
+    <tr>
+      <td>S.n.c. regolare</td>
+      <td>Solo (1) e (2). La liquidazione della quota è possibile eccezionalmente in caso di <strong>proroga della durata</strong> della società: se espressa, previa domanda al giudice; se tacita, il creditore può rivolgersi direttamente alla società</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="scioglimento-vincolo">2.5 Scioglimento del vincolo particolare del socio</h2>
+
+<div class="def">Lo scioglimento del vincolo particolare riguarda il singolo socio e mantiene in vita la società. Le cause sono: recesso, esclusione, morte, cessione della quota.</div>
+
+<h3>Recesso</h3>
+<div class="art">Art. 2285 c.c.: ogni socio può recedere quando la società è contratta a tempo indeterminato o per tutta la vita di uno dei soci (con preavviso di almeno 3 mesi); nei casi previsti dal contratto sociale; quando sussiste una giusta causa.</div>
+
+<table>
+  <thead><tr><th>Durata della società</th><th>Condizioni per il recesso</th></tr></thead>
+  <tbody>
+    <tr><td>Tempo indeterminato (o durata pari alla vita di un socio)</td><td>Libero, in qualsiasi momento, con preavviso di 90 giorni</td></tr>
+    <tr><td>Tempo determinato</td><td>Solo per giusta causa (circostanze oggettive o soggettive che impediscono la prosecuzione)</td></tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Il socio receduto <strong>rimane responsabile</strong> delle obbligazioni sorte mentre era socio; <strong>non risponde</strong> di quelle sorte dopo.</li>
+  <li>Nelle società regolari il recesso deve essere iscritto al Registro delle imprese per essere opponibile ai terzi; nelle irregolari, portato a conoscenza con mezzi idonei.</li>
+  <li><strong>Liquidazione della quota</strong>: il socio receduto ha diritto a una somma pari al valore attuale della quota, calcolata su bilancio ad hoc al giorno del recesso. Può essere superiore o inferiore al conferimento originario.</li>
+</ul>
+
+<h3>Esclusione</h3>
+
+<h3>Esclusione facoltativa (art. 2286)</h3>
+<ul>
+  <li><strong>Gravi inadempienze</strong> degli obblighi derivanti dalla legge o dal contratto sociale (es. mancato conferimento, violazione divieto di concorrenza art. 2301, ingerenza nell'amministrazione per i soci accomandanti art. 2320).</li>
+  <li><strong>Interdizione, inabilitazione, condanna</strong> a pena che comporta interdizione dai pubblici uffici.</li>
+  <li>Socio d'opera: <strong>sopravvenuta inidoneità</strong> a svolgere l'opera conferita.</li>
+  <li>Socio che ha conferito il godimento di una cosa: <strong>perimento della cosa</strong> per causa non imputabile agli amministratori.</li>
+  <li>Socio obbligato a trasferire la proprietà: <strong>perimento prima del trasferimento</strong>.</li>
+</ul>
+<p>Procedimento: decisione a maggioranza per teste dei soci (art. 2287); comunicazione al socio escluso; il socio ha 30 giorni per opporsi davanti al tribunale. Se la società ha solo due soci, l'esclusione deve essere chiesta direttamente al tribunale.</p>
+
+<h3>Esclusione di diritto (art. 2288)</h3>
+<ul>
+  <li>Creditore particolare del socio ottiene la liquidazione della quota.</li>
+  <li>Sottoposizione del socio a liquidazione giudiziale.</li>
+</ul>
+
+<div class="exc">Il socio escluso rimane responsabile delle obbligazioni sorte durante il vincolo; non risponde di quelle successive. Anche qui vige l'onere di rendere lo scioglimento opponibile ai terzi.</div>
+
+<h3>Morte del socio</h3>
+<div class="art">Art. 2284 c.c.: salvo diversa disposizione, in caso di morte di un socio gli altri devono liquidare la quota agli eredi, a meno che preferiscano sciogliere la società, ovvero continuarla con gli eredi e questi vi acconsentano.</div>
+
+<ul>
+  <li>Non c'è subingresso automatico degli eredi: le società di persone sono infungibili.</li>
+  <li>I soci superstiti possono all'unanimità: (a) proporre agli eredi il subentro; (b) sciogliere la società.</li>
+</ul>
+
+<h3>Clausole statutarie sulla morte del socio</h3>
+<table>
+  <thead><tr><th>Tipo di clausola</th><th>Meccanismo</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Consolidazione</strong></td><td>La quota del defunto si accresce proporzionalmente alle quote degli altri soci; il patrimonio sociale rimane integro</td><td>Gli altri soci "acquistano" pro quota la partecipazione del defunto</td></tr>
+    <tr><td><strong>Continuazione facoltativa</strong></td><td>I soci si vincolano ad offrire agli eredi la continuazione</td><td>Gli eredi possono rifiutare</td></tr>
+    <tr><td><strong>Continuazione obbligatoria</strong></td><td>La clausola vincola soci e (in tesi) eredi; in realtà gli eredi non hanno sottoscritto il patto → rifiuto = inadempimento con obbligo di risarcire</td><td>Pone problemi di patto successorio (nullo); gli eredi che accettano firmano un nuovo contratto sociale</td></tr>
+    <tr><td><strong>Continuazione automatica/successoria</strong></td><td>All'accettazione dell'eredità l'erede diventa automaticamente socio</td><td>La giurisprudenza "salva" la clausola: l'erede risponde dei debiti pregressi solo con i beni ereditari (accettazione con beneficio di inventario)</td></tr>
+  </tbody>
+</table>
+
+<h3>Clausole di uscita in caso di stallo decisionale</h3>
+<table>
+  <thead><tr><th>Clausola</th><th>Meccanismo</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Roulette russa</strong></td><td>Un socio formula un'offerta e fissa un prezzo per le azioni; l'altro socio sceglie se comprare o vendere a quel prezzo. Il silenzio equivale ad accettare la proposta di acquisto. L'aleatorietà risiede nel prezzo: troppo alto → l'altro vende; troppo basso → l'altro compra.</td></tr>
+    <tr><td><strong>Texas shoot out</strong></td><td>Ciascun socio deposita in busta chiusa la propria valutazione delle azioni; vince (acquista) chi ha valorizzato di più.</td></tr>
+  </tbody>
+</table>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="scioglimento-societa">2.6 Scioglimento della società</h2>
+
+<div class="def">Al verificarsi di una causa di scioglimento la società non si estingue immediatamente ma entra nella fase di <strong>liquidazione</strong>. Solo al termine della liquidazione si verifica l'estinzione (cancellazione dal Registro delle imprese).</div>
+
+<h3>Cause di scioglimento (art. 2272 c.c.)</h3>
+<ol>
+  <li><strong>Decorso del termine</strong> (prorogabile con il consenso di tutti i soci).</li>
+  <li><strong>Conseguimento dell'oggetto sociale</strong> o sua <strong>sopravvenuta impossibilità</strong> (materiale o giuridica).</li>
+  <li><strong>Volontà di tutti i soci</strong> (scioglimento anticipato consensuale).</li>
+  <li><strong>Venir meno della pluralità dei soci</strong>: efficacia differita a 6 mesi; nel frattempo si può ricostituire la pluralità (nuovo socio o cessione parziale della quota).</li>
+  <li><strong>Altre cause previste dal contratto sociale</strong> (es. morte di un socio determinato).</li>
+  <li><strong>Apertura della procedura di liquidazione controllata</strong> (art. 2272 n. 5-bis).</li>
+</ol>
+
+<h3>Fase di liquidazione</h3>
+<ul>
+  <li>Nelle società di persone la liquidazione può essere regolata interamente dal contratto sociale (anche affidata agli stessi amministratori).</li>
+  <li>I liquidatori <strong>non possono intraprendere nuove operazioni</strong> (art. 2279); in caso contrario rispondono personalmente e solidalmente.</li>
+</ul>
+
+<h3>Destinazione del patrimonio liquidato</h3>
+<ol>
+  <li><strong>Adempimento delle obbligazioni sociali</strong> (absolute priority rule): finché non sono soddisfatti tutti i creditori i soci non possono disporre del patrimonio; se insufficiente, i creditori si rivolgono ai soci (responsabilità personale e solidale).</li>
+  <li><strong>Rimborso dei conferimenti</strong>: ciascun socio recupera il valore esatto del proprio conferimento.</li>
+  <li><strong>Ripartizione dell'avanzo</strong> tra i soci in base alle quote di partecipazione agli utili (può avvenire in natura, con applicazione delle norme sulla divisione).</li>
+</ol>
+
+<p>La società si estingue con la <strong>cancellazione dal Registro delle imprese</strong>.</p>
+  </div>
+
+  <!-- ══ SEZIONE 3 ══ -->
+  <div id="s3" class="section">
+    <button class="back-btn" onclick="goHome()">← Torna al menu</button>
+<h1>3. Società in accomandita semplice</h1>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#struttura">Struttura e fonti normative</a></li>
+    <li><a href="#accomandanti">Accomandanti</a></li>
+    <li><a href="#accomandatari">Accomandatari</a></li>
+    <li><a href="#scioglimento">Cause di scioglimento</a></li>
+  </ol>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="struttura">3.1 Struttura e fonti normative</h2>
+
+<div class="def">La s.a.s. è una società di persone con connotato tipologico ibrido: combina la figura del socio imprenditore (accomandatario) con quella dell'investitore di capitali (accomandante). La disciplina di base è quella della s.n.c., integrata dalle norme specifiche della s.a.s.</div>
+
+<table>
+  <thead><tr><th></th><th>Accomandatari</th><th>Accomandanti</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Ruolo economico</strong></td><td>Soci imprenditori: gestiscono l'impresa con i capitali degli accomandanti</td><td>Soci capitalisti: investono denaro o beni in vista di un utile</td></tr>
+    <tr><td><strong>Responsabilità</strong></td><td>Personale, illimitata, solidale per tutte le obbligazioni sociali; inderogabile</td><td>Limitata al conferimento; i creditori sociali non possono aggredire il patrimonio personale</td></tr>
+    <tr><td><strong>Amministrazione</strong></td><td>Spetta di regola a ciascun accomandatario (come socio s.n.c.)</td><td>Vietata (divieto di immistione); solo atti espressamente consentiti dalla legge o dall'atto costitutivo</td></tr>
+    <tr><td><strong>Trasferimento quota inter vivos</strong></td><td>Consenso unanime di tutti i soci</td><td>Consenso dei soci che rappresentano la maggioranza del capitale (salvo diversa disposizione dell'atto costitutivo)</td></tr>
+    <tr><td><strong>Trasferimento quota mortis causa</strong></td><td>Regole delle società di persone (art. 2284)</td><td>Libero: gli eredi subentrano automaticamente come nelle s.p.a.</td></tr>
+  </tbody>
+</table>
+
+<p>La <strong>ragione sociale</strong> (nome della società di persone) deve contenere il nome di almeno un socio accomandatario. Se il nome di un accomandante compare nella ragione sociale, quell'accomandante perde il beneficio della responsabilità limitata.</p>
+
+<hr>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="accomandanti">3.2 Accomandanti</h2>
+
+<h3>Divieto di immistione</h3>
+
+<div class="art">Art. 2320 co. 1: i soci accomandanti non possono compiere atti di amministrazione, né trattare o concludere affari in nome della società, se non in forza di procura speciale per singoli affari. Il socio accomandante che contravviene assume responsabilità illimitata e solidale verso i terzi per <em>tutte</em> le obbligazioni sociali e può essere escluso.</div>
+
+<ul>
+  <li>Il divieto comprende ogni atto gestorio, ogni trattativa, ogni conclusione di affari in nome sociale.</li>
+  <li>È possibile rilasciare all'accomandante una <strong>procura speciale per singoli affari</strong>, rilasciata dagli accomandatari (anche singolarmente, salvo diversa previsione del contratto).</li>
+  <li>Il contratto stipulato dall'accomandante <em>senza procura</em> è inefficace per mancanza di potere rappresentativo; può tuttavia essere ratificato da un accomandatario.</li>
+</ul>
+
+<div class="exc">Conseguenze della violazione del divieto di immistione: l'accomandante (1) perde il beneficio della responsabilità limitata e risponde illimitatamente e solidalmente di <em>tutte</em> le obbligazioni sociali (non solo di quelle derivanti dall'atto compiuto); (2) può essere escluso dalla società ex art. 2286; (3) non acquista per questo i poteri amministrativi tipici dell'accomandatario.</div>
+
+<div class="exc">Stessa conseguenza (perdita della responsabilità limitata) se il nome dell'accomandante compare nella ragione sociale.</div>
+
+<h3>Atti consentiti agli accomandanti</h3>
+
+<div class="art">Art. 2320 co. 2: i soci accomandanti possono prestare la propria opera <em>sotto la direzione degli amministratori</em>; se l'atto costitutivo lo consente, dare autorizzazioni e pareri per determinate operazioni e compiere atti di ispezione e sorveglianza.</div>
+
+<div class="art">Art. 2320 co. 3: in ogni caso gli accomandanti hanno diritto di ricevere comunicazione annuale del bilancio e del conto dei profitti e delle perdite, e di controllarne l'esattezza consultando i libri e gli altri documenti della società.</div>
+
+<ul>
+  <li><strong>Lavoro subordinato o autonomo</strong>: l'accomandante può essere lavoratore della società, purché agisca sotto la direzione degli accomandatari (l'assenza di autonomia esclude la violazione del divieto).</li>
+  <li><strong>Autorizzazioni e pareri</strong>: se previsti dall'atto costitutivo per operazioni specificamente indicate; non possono mai essere vincolanti. La mancata osservanza del parere da parte degli accomandatari può generare responsabilità risarcitoria se causa una perdita.</li>
+  <li><strong>Ispezione e sorveglianza</strong>: diritto generale di tutti i soci non amministratori (art. 2261 c.c.).</li>
+</ul>
+
+<h3>Conferimenti degli accomandanti</h3>
+<ul>
+  <li>Orientamento tradizionale (superato): gli accomandanti potevano conferire solo denaro o beni in natura, non la propria opera (in ragione della responsabilità limitata).</li>
+  <li><strong>Orientamento attuale</strong>: gli accomandanti possono conferire anche prestazioni d'opera o di servizi; il valore del conferimento viene indicato e valutato nell'atto costitutivo.</li>
+</ul>
+
+<h3>Restituzione degli utili</h3>
+<div class="art">Art. 2321: i soci accomandanti non sono tenuti alla restituzione degli utili riscossi in buona fede secondo il bilancio regolarmente approvato (identico all'art. 2433 per le s.p.a.).</div>
+<ul>
+  <li>La buona fede consiste nell'ignoranza di ledere l'altrui diritto al momento della riscossione.</li>
+  <li>Per i soci amministratori (accomandatari), invece, se l'utile risulta fittizio l'obbligo di restituzione sussiste.</li>
+</ul>
+
+<h3>Nomina e revoca degli amministratori</h3>
+<ul>
+  <li><strong>Nominati nel contratto sociale</strong>: gli accomandanti concorrono firmando l'atto costitutivo; la revoca richiede giusta causa e consenso unanime.</li>
+  <li><strong>Nominati con atto separato</strong> (art. 2319): occorrono il consenso unanime degli accomandatari e l'approvazione di tanti accomandanti che rappresentino la <em>maggioranza del capitale</em> da essi sottoscritto.</li>
+</ul>
+
+<hr>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="accomandatari">3.3 Accomandatari</h2>
+
+<ul>
+  <li>Disciplinati come i soci di s.n.c.: responsabilità personale, illimitata, solidale; inderogabile nei confronti dei terzi.</li>
+  <li>Titolari del potere di amministrazione e rappresentanza; se il contratto sociale non dispone diversamente, ciascun accomandatario è amministratore e rappresentante (modello disgiuntivo).</li>
+  <li>Applicazione integrale delle norme s.n.c. su: modalità di esercizio del potere di gestione (disgiuntivo/congiuntivo), revoca, responsabilità verso i terzi, beneficio di preventiva escussione (nella s.a.s. regolare), opponibilità ai terzi dei limiti della rappresentanza.</li>
+</ul>
+
+<hr>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="scioglimento">3.4 Cause di scioglimento</h2>
+
+<div class="def">Oltre alle cause generali delle società di persone (art. 2272), la s.a.s. si scioglie per una causa peculiare: il <strong>venir meno di una delle due categorie di soci</strong>.</div>
+
+<ul>
+  <li>La società deve avere <em>sempre</em> entrambe le categorie (accomandanti e accomandatari).</li>
+  <li>Se rimane una sola categoria: <strong>moratoria di 6 mesi</strong> per ricostituire la categoria mancante; decorso inutilmente il termine, la società entra in liquidazione.</li>
+</ul>
+
+<table>
+  <thead><tr><th>Categoria rimasta</th><th>Conseguenza durante i 6 mesi</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Solo accomandatari</strong></td>
+      <td>Continuano ad amministrare normalmente</td>
+    </tr>
+    <tr>
+      <td><strong>Solo accomandanti</strong></td>
+      <td>Non possono amministrare (divieto di immistione); devono nominare un <strong>amministratore provvisorio</strong> (anche uno degli stessi accomandanti) che può compiere solo atti di ordinaria amministrazione e non acquista la qualità di accomandatario. Se l'accomandante-amministratore provvisorio rimane nei limiti dell'ordinaria amministrazione, <em>non perde il beneficio della responsabilità limitata</em>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>S.a.s. irregolare</h3>
+<ul>
+  <li>Si verificano le stesse conseguenze previste per la s.n.c. irregolare.</li>
+  <li>Ulteriore aggravamento a tutela dei terzi: nella s.a.s. irregolare il <strong>divieto di immistione è assoluto e inderogabile</strong>; non è possibile rilasciare agli accomandanti la procura speciale per singoli affari.</li>
+</ul>
+  </div>
+
+  <!-- ══ SEZIONE 4 ══ -->
+  <div id="s4" class="section">
+    <button class="back-btn" onclick="goHome()">← Torna al menu</button>
+<h1>4. Società per azioni</h1>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#caratteristiche">Caratteristiche ed evoluzione della disciplina</a></li>
+    <li><a href="#costituzione">Costituzione e nullità</a></li>
+    <li><a href="#conferimenti">Conferimenti</a></li>
+    <li><a href="#azioni">Azioni: tecnica azionaria, categorie speciali, circolazione</a></li>
+    <li><a href="#parasociali">Patti parasociali e vincoli sulle azioni</a></li>
+    <li><a href="#proprie">Operazioni sulle azioni proprie</a></li>
+    <li><a href="#assemblea">Assemblea dei soci</a></li>
+    <li><a href="#amministratori">Amministratori</a></li>
+    <li><a href="#responsabilita">Responsabilità degli amministratori</a></li>
+    <li><a href="#sindacale">Collegio sindacale</a></li>
+    <li><a href="#capitale">Aumento e riduzione del capitale sociale</a></li>
+    <li><a href="#obbligazioni">Emissione di obbligazioni</a></li>
+    <li><a href="#recesso">Diritto di recesso</a></li>
+    <li><a href="#scioglimento">Scioglimento e liquidazione</a></li>
+  </ol>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="caratteristiche">4.1 Caratteristiche ed evoluzione della disciplina</h2>
+
+<h3>Tre caratteristiche tipologiche</h3>
+<table>
+  <thead><tr><th>Caratteristica</th><th>Contenuto</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Responsabilità limitata</strong></td><td>Il socio risponde solo nei limiti del conferimento; nessun obbligo personale per le obbligazioni sociali. Vale anche per la s.p.a. unipersonale.</td></tr>
+    <tr><td><strong>Tecnica azionaria</strong></td><td>Il capitale sociale nominale è suddiviso in frazioni omogenee e di uguale valore (azioni); facilita la circolazione e la negoziazione sui mercati.</td></tr>
+    <tr><td><strong>Organizzazione corporativa</strong></td><td>Struttura interna rigida e imperativa con sfere di competenza separate tra assemblea, organo amministrativo, organo di controllo. Tre modelli possibili dal 2004: tradizionale (suppletivo), dualistico, monistico.</td></tr>
+  </tbody>
+</table>
+
+<h3>Patrimonio sociale vs. capitale sociale nominale</h3>
+<div class="def"><strong>Patrimonio sociale</strong>: insieme concreto e dinamico dei rapporti giuridici attivi e passivi della società (beni, crediti, debiti). <strong>Capitale sociale nominale</strong>: cifra astratta, clausola dell'atto costitutivo, pari al valore complessivo dei conferimenti iniziali. Nel momento costitutivo coincidono; poi il patrimonio varia, il capitale no (salvo delibera assembleare).</div>
+<ul>
+  <li>Il capitale sociale funge da <em>livellatore</em>: i terzi possono fare affidamento su quel valore minimo garantito.</li>
+  <li>Se il patrimonio scende al di sotto del capitale, questo deve essere ridotto per allinearsi al patrimonio reale.</li>
+</ul>
+
+<h3>Evoluzione della disciplina</h3>
+<ul>
+  <li>Fino al 1974: disciplina unica per tutte le s.p.a.</li>
+  <li>1974 ("miniriforma" l. 216/1974): nasce la Consob; prime azioni di risparmio (senza voto, con maggiorazione di utili).</li>
+  <li>1998: Testo Unico della finanza (d.lgs. 58/1998) — legge speciale per le società quotate.</li>
+  <li>2004: art. 2325-bis — distinzione tra società aperte (quotate o con azioni diffuse tra il pubblico in misura rilevante) e società chiuse.</li>
+  <li>2024: legge capitali — riforma del T.U. (in corso di recepimento); voto plurimo elevato fino a 10 voti per azione.</li>
+</ul>
+
+<div class="art">Art. 2325-bis: sono società che fanno ricorso al mercato del capitale di rischio le società con azioni quotate in mercati regolamentati o diffuse fra il pubblico in misura rilevante.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="costituzione">4.2 Costituzione e nullità</h2>
+
+<h3>Costituzione simultanea</h3>
+<ul>
+  <li>Necessariamente per <strong>atto pubblico</strong> (<em>forma ad substantiam</em>): il notaio esercita il controllo di legittimità.</li>
+  <li>Con l'iscrizione nel Registro delle imprese la s.p.a. acquista personalità giuridica (<strong>efficacia costitutiva</strong> dell'iscrizione — art. 2331).</li>
+  <li>Lo statuto è parte integrante dell'atto costitutivo; in caso di contrasto <em>prevale lo statuto</em>.</li>
+</ul>
+
+<h3>Contenuto obbligatorio dell'atto costitutivo (art. 2328)</h3>
+<ul>
+  <li>Generalità dei soci e numero di azioni assegnate a ciascuno.</li>
+  <li>Denominazione (libera, purché contenga la sigla "s.p.a.") e sede.</li>
+  <li>Oggetto sociale: deve essere lecito, determinato/determinabile, sufficientemente definito ma non troppo limitato. Non è un limite al potere di rappresentanza.</li>
+  <li>Ammontare del capitale sottoscritto e versato (minimo legale: 50.000 €). Il 25% del conferimento in denaro deve essere versato alla sottoscrizione; i conferimenti in natura devono essere integralmente liberati al momento.</li>
+  <li>Numero e valore nominale delle azioni: <em>valore nominale = capitale sociale ÷ numero di azioni</em>.</li>
+  <li>Valore attribuito ai conferimenti in natura.</li>
+  <li>Norme sulla ripartizione degli utili.</li>
+  <li>Sistema di amministrazione adottato, numero e poteri degli amministratori, indicazione di chi ha la rappresentanza.</li>
+  <li>Numero dei componenti il collegio sindacale (min. 3, max. 5 per le società chiuse).</li>
+  <li>Nomina dei primi amministratori, sindaci e soggetto incaricato della revisione legale.</li>
+  <li>Durata della società (determinata o indeterminata; in quest'ultimo caso il recesso è possibile con preavviso di 180 giorni).</li>
+</ul>
+
+<h3>Nullità della società (art. 2332)</h3>
+<div class="def">Dopo l'iscrizione nel Registro delle imprese, la nullità della s.p.a. può essere pronunciata solo per tre cause tassative. La dichiarazione di nullità produce una causa di scioglimento e non pregiudica l'efficacia degli atti compiuti dopo l'iscrizione. La nullità è <strong>sanabile</strong>.</div>
+<table>
+  <thead><tr><th>Causa di nullità</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td>Mancata stipulazione per atto pubblico</td><td>Forma è essenziale</td></tr>
+    <tr><td>Illiceità dell'oggetto sociale</td><td>Contrario a norme imperative, ordine pubblico, buon costume; se modifica in oggetto illecito: azione imprescrittibile</td></tr>
+    <tr><td>Mancanza nell'atto costitutivo di ogni indicazione relativa a: denominazione, conferimenti, capitale sociale, oggetto sociale</td><td>Lacune non colmabili da norme suppletive; gli altri elementi mancanti si colmano per legge</td></tr>
+  </tbody>
+</table>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="conferimenti">4.3 Conferimenti</h2>
+
+<div class="def">I conferimenti devono corrispondere all'ammontare del capitale sociale nominale. Sono ammessi conferimenti in denaro, beni, crediti, partecipazioni. È vietato il conferimento di prestazioni d'opera o servizi (divieto imposto dalla seconda direttiva comunitaria, non applicabile alla s.r.l.).</div>
+
+<h3>Conferimenti in denaro</h3>
+<ul>
+  <li>Forma di conferimento di default (art. 2342).</li>
+  <li>Alla sottoscrizione: versamento di almeno il <strong>25%</strong> presso una banca (100% se atto unilaterale); il rimanente 75% viene "richiamato" dagli amministratori.</li>
+</ul>
+
+<h3>Conferimenti in natura e crediti (art. 2343)</h3>
+<ol>
+  <li><strong>Perizia giurata</strong> di un esperto nominato dal tribunale: descrizione, valutazione, attestazione che il valore copre il capitale nominale delle azioni sottoscritte. Deve essere allegata all'atto costitutivo.</li>
+  <li><strong>Controllo degli amministratori</strong> entro 180 giorni dall'iscrizione.</li>
+  <li>Se emerge una differenza <strong>&gt; 1/5</strong>: la società deve ridurre il capitale / il socio può versare la differenza in denaro / il socio può recedere con restituzione del conferimento. Se differenza ≤ 1/5: procedimento concluso.</li>
+</ol>
+
+<h3>Conferimenti senza relazione di stima (art. 2343-ter)</h3>
+<p>Non è richiesta la perizia del tribunale se il valore attribuito non supera: (a) il prezzo medio ponderato sui mercati regolamentati degli ultimi 6 mesi (per valori mobiliari); (b) il fair value risultante dal bilancio dell'esercizio precedente sottoposto a revisione senza rilievi; (c) il valore risultante da perizia di esperto indipendente non più vecchia di 6 mesi.</p>
+
+<h3>Prestazioni accessorie (art. 2345)</h3>
+<p>Lo statuto può prevedere l'obbligo dei soci di eseguire prestazioni non in denaro (opera, servizi) in aggiunta al conferimento. Le relative azioni sono nominative e non trasferibili senza consenso degli amministratori.</p>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="azioni">4.4 Azioni: tecnica azionaria, categorie speciali, circolazione</h2>
+
+<h3>Nozione polisemica di "azione"</h3>
+<ul>
+  <li>Frazione minima e indivisibile del capitale sociale.</li>
+  <li>Quota minima per diventare socio.</li>
+  <li>Partecipazione sociale: incorpora diritti, poteri e prerogative del socio.</li>
+  <li>Eventualmente: documento cartaceo o dematerializzato.</li>
+</ul>
+
+<div class="art">Art. 2348: le azioni devono essere di uguale valore e conferiscono ai loro possessori uguali diritti (uguaglianza relativa: il potere dipende dal numero di azioni — principio plutocratico). Lo statuto può creare categorie di azioni con diritti diversi.</div>
+
+<h3>Diritti incorporati nelle azioni</h3>
+<table>
+  <thead><tr><th>Tipo di diritto</th><th>Come si misura</th><th>Esempi</th></tr></thead>
+  <tbody>
+    <tr><td>Proporzionali al numero di azioni</td><td>Moltiplicati per le azioni detenute</td><td>Diritto di voto, utili, quota di liquidazione</td></tr>
+    <tr><td>Indipendenti dal numero</td><td>Spettano a ogni socio</td><td>Diritto di intervento in assemblea, recesso, consultazione libri sociali, denuncia fatti censurabili</td></tr>
+    <tr><td>Legati a soglie di partecipazione</td><td>Solo se si detiene una certa aliquota</td><td>Azione di responsabilità contro gli amministratori (20%), convocazione assemblea (10% o 5%), impugnazione delibere (5% nelle società chiuse, 1‰ nelle aperte)</td></tr>
+  </tbody>
+</table>
+
+<h3>Categorie speciali di azioni — piano amministrativo</h3>
+<div class="art">Art. 2351: ogni azione attribuisce il diritto di voto. Lo statuto può creare azioni senza voto, con voto limitato ad argomenti specifici, con voto subordinato a condizioni non meramente potestative. Il valore di tali azioni non può superare <strong>la metà del capitale sociale</strong>.</div>
+<ul>
+  <li><strong>Azioni a voto plurimo</strong> (solo società chiuse): fino a 10 voti per azione (legge capitali 2024). Una società che si quota può mantenerle.</li>
+  <li><strong>Maggiorazione del voto</strong> (società quotate): il voto cresce con la durata del possesso continuato (es. +1 voto/anno fino a max 10); si perde alla vendita.</li>
+  <li><strong>Voto contingentato/scaglionato</strong> (art. 2351 co. 3): la quantità di voti cresce meno che proporzionalmente al numero di azioni; non incorporato nelle azioni, dipende dal possesso complessivo del singolo socio.</li>
+  <li>Ad ogni categoria speciale corrisponde un'<strong>assemblea speciale</strong> con proprio rappresentante comune (art. 2376).</li>
+</ul>
+
+<h3>Categorie speciali di azioni — piano patrimoniale</h3>
+<ul>
+  <li><strong>Azioni privilegiate</strong>: dividendo maggiorato e/o priorità nella percezione dell'utile.</li>
+  <li><strong>Azioni postergate nelle perdite</strong>: ultime ad essere annullate in caso di riduzione obbligatoria del capitale; maggiore resilienza al rischio.</li>
+  <li>Limite: divieto del patto leonino (art. 2265), interpretato in senso sostanziale.</li>
+</ul>
+
+<h3>Circolazione delle azioni</h3>
+<p>Di regola libera. Le azioni sono nominative (trasferimento per <em>transfert</em> o <em>girata</em>); il giratario in base a serie continua di girate è legittimato ad esercitare i diritti sociali senza necessità di iscrizione nel libro soci (art. 2355 co. 3). Le azioni al portatore si trasferiscono con la consegna del titolo. Le azioni quotate sono obbligatoriamente dematerializzate dal 2000.</p>
+
+<h3>Limiti convenzionali alla circolazione</h3>
+<table>
+  <thead><tr><th>Tipo di clausola</th><th>Contenuto</th><th>Tutela dell'alienante</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Lock up</strong> (art. 2355-bis)</td><td>Divieto di trasferimento per max 5 anni</td><td>—</td></tr>
+    <tr><td><strong>Prelazione propria</strong></td><td>Obbligo di offrire prima agli altri soci a parità di condizioni</td><td>—</td></tr>
+    <tr><td><strong>Prelazione impropria</strong></td><td>Prezzo predeterminato o fissato da arbitratore</td><td>—</td></tr>
+    <tr><td><strong>Mero gradimento</strong></td><td>Assenso di un organo sociale o di altri soci</td><td>Inefficace se non prevede obbligo di acquisto della società/degli altri soci <strong>o</strong> diritto di recesso dell'alienante (art. 2355-bis co. 2)</td></tr>
+    <tr><td><strong>Non mero gradimento</strong></td><td>Accesso riservato a soci con particolari requisiti</td><td>—</td></tr>
+    <tr><td><strong>Riscatto</strong></td><td>Al verificarsi di un evento, acquisto automatico dalla società o da altri soci</td><td>Si applicano criteri di liquidazione del recesso (art. 2437-ter)</td></tr>
+    <tr><td><strong>Co-vendita</strong></td><td>Facoltà o obbligo di vendere insieme ad altri soci alle stesse condizioni</td><td>—</td></tr>
+  </tbody>
+</table>
+<div class="exc">Le clausole statutarie hanno efficacia <strong>reale</strong> (opponibili a chiunque); quelle non statutarie (es. patti parasociali) hanno efficacia <strong>obbligatoria</strong>.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="parasociali">4.5 Patti parasociali</h2>
+
+<div class="def">Accordi tra soci che regolano l'esercizio dei diritti sociali al di fuori dello statuto. Hanno efficacia <strong>obbligatoria</strong>: la violazione rende l'inadempiente responsabile per danni ma il voto espresso in assemblea rimane valido. Non sono opponibili alla società neanche se tutti i soci vi aderiscono.</div>
+
+<h3>Tipi principali</h3>
+<ul>
+  <li><strong>Sindacato di voto</strong>: i soci si accordano preventivamente sulle decisioni assembleari.</li>
+  <li><strong>Sindacato di blocco</strong>: i soci si impegnano a non cedere le partecipazioni o a cederle solo agli altri pattisti.</li>
+</ul>
+
+<h3>Limiti</h3>
+<ul>
+  <li><strong>Temporali</strong>: durata massima 5 anni (rinnovabili); altrimenti, diritto di recesso con preavviso di 180 giorni.</li>
+  <li><strong>Pubblicitari</strong> (per le società aperte): comunicazione alla società; dichiarazione in apertura di ogni assemblea, trascritta a verbale e depositata al Registro delle imprese.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="proprie">4.6 Operazioni sulle azioni proprie</h2>
+
+<h3>Sottoscrizione di azioni proprie</h3>
+<div class="art">Art. 2357-quater: la società non può sottoscrivere azioni proprie. In caso di violazione, le azioni si intendono sottoscritte dai promotori, soci fondatori o amministratori (a seconda della fase), salvo prova di assenza di colpa.</div>
+
+<h3>Acquisto di azioni proprie (art. 2357)</h3>
+<p>È consentito al ricorrere cumulativo di:</p>
+<ul>
+  <li>Utilizzo di soli <strong>utili distribuibili o riserve disponibili</strong>.</li>
+  <li>Azioni <strong>interamente liberate</strong>.</li>
+  <li><strong>Autorizzazione dell'assemblea ordinaria</strong> con delibera specifica (modalità, numero massimo, durata max 18 mesi, corrispettivo min/max).</li>
+  <li>Per le società aperte: le azioni proprie non possono superare <strong>1/5 del capitale sociale</strong>.</li>
+</ul>
+<div class="exc">Acquisto in violazione dei presupposti: valido ed efficace, ma sanzioni penali per gli amministratori. Le azioni devono essere rivendute entro 1 anno; se non rivendute, vanno annullate con riduzione del capitale (delibera assembleare straordinaria o tribunale su ricorso degli amministratori).</div>
+
+<h3>Casi speciali di acquisto (art. 2357-bis)</h3>
+<ul>
+  <li>Esecuzione di delibera di riduzione del capitale con riscatto e annullamento.</li>
+  <li>Acquisto a titolo gratuito (azioni interamente liberate).</li>
+  <li>Successione universale, fusione o scissione.</li>
+  <li>Esecuzione forzata per credito della società (azioni interamente liberate).</li>
+</ul>
+
+<h3>Diritti sociali delle azioni proprie (art. 2357-ter)</h3>
+<ul>
+  <li><strong>Diritto di voto: sospeso</strong>. Le azioni proprie sono tuttavia computate ai fini del calcolo delle maggioranze e dei quorum.</li>
+  <li>Diritto agli utili e diritto di opzione: attribuiti proporzionalmente alle altre azioni.</li>
+  <li>Le azioni proprie sono iscritte nel passivo del bilancio come <strong>riserva negativa</strong> (posta correttiva del patrimonio netto), pari al prezzo di acquisto.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="assemblea">4.7 Assemblea dei soci</h2>
+
+<div class="def">L'assemblea è il luogo (fisico o virtuale) in cui i soci esercitano il diritto di intervento e di voto. Solo i titolari di azioni con diritto di voto possono intervenire. Le delibere adottate in conformità di legge e statuto vincolano tutti i soci, anche assenti o dissenzienti (principio capitalistico — art. 2377).</div>
+
+<h3>Competenze dell'assemblea ordinaria (art. 2364)</h3>
+<ul>
+  <li>Approvazione del bilancio (convocazione almeno una volta l'anno, entro 120 giorni dalla chiusura dell'esercizio; max 180 giorni per particolari esigenze).</li>
+  <li>Nomina e revoca degli amministratori, dei sindaci e del revisore legale.</li>
+  <li>Determinazione dei compensi degli amministratori e dei sindaci.</li>
+  <li>Deliberazione sulla responsabilità degli amministratori e dei sindaci.</li>
+  <li>Eventuale deliberazione su autorizzazioni per atti degli amministratori previste dallo statuto.</li>
+  <li>Approvazione del regolamento dei lavori assembleari.</li>
+</ul>
+
+<h3>Competenze dell'assemblea straordinaria (art. 2365)</h3>
+<ul>
+  <li>Modificazioni dello statuto e dell'atto costitutivo.</li>
+  <li>Nomina, sostituzione e poteri dei liquidatori.</li>
+  <li>Emissione di obbligazioni convertibili in azioni.</li>
+  <li>Operazioni straordinarie (fusioni, scissioni) e riduzione del capitale.</li>
+  <li>Alcune competenze possono essere delegate all'organo amministrativo (es. aumento del capitale: delega max 5 anni).</li>
+</ul>
+<div class="exc">Quorum assemblea straordinaria: costitutivo 1/3 del capitale; deliberativo 2/3 del capitale rappresentato. Richiede sempre la presenza del notaio per la verbalizzazione in atto pubblico.</div>
+
+<h3>Procedimento assembleare</h3>
+<p>Fasi necessarie e susseguenti: convocazione → riunione → discussione → votazione → verbalizzazione.</p>
+
+<table>
+  <thead><tr><th>Fase</th><th>Regole principali</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Convocazione</strong></td><td>Spetta agli amministratori (in certi casi al collegio sindacale o al tribunale). Avviso: pubblicazione in G.U. o quotidiano indicato nello statuto almeno 15 giorni prima (8 giorni per le società chiuse con strumenti idonei). Ordine del giorno obbligatorio; l'assemblea non può deliberare su materie non incluse (salvo responsabilità degli amministratori in sede di bilancio). I soci che rappresentino il 10% (o 5% nelle società aperte) del capitale possono richiedere la convocazione (art. 2367).</td></tr>
+    <tr><td><strong>Riunione</strong></td><td>Diretta da un presidente. Può essere fisica, virtuale o ibrida (assemblee totalmente a distanza prorogate al 30.09.2026 senza previsione statutaria). Quorum costitutivi diversi per ordinaria e straordinaria, e per prima/seconda convocazione.</td></tr>
+    <tr><td><strong>Votazione</strong></td><td>Votano le azioni, non le persone (in base al numero di azioni). Escluso lo scrutinio segreto. I soci possono farsi rappresentare per delega scritta (art. 2372); nelle società aperte, delega per singole assemblee salvo procura generale. Il socio può chiedere rinvio di 5 giorni se con altri soci rappresenta 1/3 del capitale presente e non è sufficientemente informato (art. 2374).</td></tr>
+    <tr><td><strong>Verbalizzazione</strong></td><td>Redatta dal segretario e dal presidente; per l'assemblea straordinaria richiesta la forma di atto pubblico con notaio verbalizzante.</td></tr>
+  </tbody>
+</table>
+
+<h3>Invalidità delle delibere assembleari</h3>
+<div class="def">Nel diritto societario la regola generale è l'<strong>annullabilità</strong>; la <strong>nullità</strong> è l'eccezione (sovversione rispetto al diritto comune, a tutela della stabilità dei rapporti societari).</div>
+
+<table>
+  <thead><tr><th></th><th>Annullabilità (art. 2377)</th><th>Nullità (art. 2379)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Cause</strong></td><td>Qualsiasi violazione di legge o statuto non rientrante nelle cause di nullità</td><td>Tassative: (1) mancanza totale di convocazione; (2) mancanza del verbale; (3) oggetto impossibile o illecito</td></tr>
+    <tr><td><strong>Legittimati</strong></td><td>Soci assenti, dissenzienti, astenuti (con soglia minima di partecipazione: 1‰ nelle aperte, 5% nelle chiuse); amministratori; consiglio di sorveglianza; collegio sindacale</td><td>Chiunque vi abbia interesse; rilevabile d'ufficio dal giudice</td></tr>
+    <tr><td><strong>Termine</strong></td><td>90 giorni dalla deliberazione (o dall'iscrizione/deposito se soggetta a questi)</td><td>3 anni dall'iscrizione/deposito/trascrizione nel libro delle adunanze; imprescrittibile se modifica oggetto con attività illecita o impossibile</td></tr>
+    <tr><td><strong>Sanabilità</strong></td><td>Sì: sostituzione con delibera conforme; cessione delle azioni in corso di giudizio estingue la legittimazione</td><td>Sì: oggetto → revoca e sostituzione; verbale → tardiva verbalizzazione prima dell'assemblea successiva (art. 2379-bis); convocazione → decadenza di chi ha comunque partecipato o ha dichiarato assenso</td></tr>
+    <tr><td><strong>Effetto della sentenza</strong></td><td>Erga omnes; salvi i diritti dei terzi in buona fede</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<div class="exc">Cause per cui la delibera <strong>non può</strong> essere annullata (art. 2377 co. 5): partecipazione di non legittimati (salvo che determinante per il quorum costitutivo); invalidità o errato conteggio di singoli voti (salvo che determinanti per il quorum deliberativo); incompletezza del verbale (salvo che impedisca l'accertamento del contenuto).</div>
+
+<div class="def"><strong>Assemblea totalitaria</strong>: validamente costituita nonostante mancanza di convocazione se è presente l'intero capitale + maggioranza degli amministratori e sindaci. Può deliberare su qualunque argomento; ciascun partecipante può opporsi se non sufficientemente informato (art. 2366 co. 4-5).</div>
+
+<h3>Conflitto di interessi dei soci (art. 2373)</h3>
+<ul>
+  <li>Il socio è libero di votare perseguendo qualsiasi interesse riconducibile all'interesse sociale, anche personale. Il limite è il perseguimento di <em>esclusivi</em> interessi extrasociali.</li>
+  <li>La delibera è annullabile se il voto in conflitto è stato <strong>determinante</strong> per il quorum deliberativo e può arrecare <strong>danno</strong> alla società.</li>
+  <li>Il socio-amministratore non può votare sulle delibere concernenti la propria responsabilità.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="amministratori">4.8 Amministratori</h2>
+
+<div class="art">Art. 2380-bis: la gestione dell'impresa spetta <strong>esclusivamente</strong> agli amministratori, i quali compiono le operazioni necessarie per l'attuazione dell'oggetto sociale. Devono inoltre istituire assetti organizzativi, amministrativi e contabili adeguati (art. 2086 co. 2), anche per la rilevazione tempestiva della crisi.</div>
+
+<h3>Nomina, durata e revoca (art. 2383)</h3>
+<ul>
+  <li>Nomina: spetta all'assemblea ordinaria (i primi sono nominati nell'atto costitutivo). Durata max: <strong>3 esercizi</strong>; scadono all'assemblea per l'approvazione del bilancio dell'ultimo esercizio. Rieleggibili indefinitamente (salvo statuto).</li>
+  <li>Revoca: possibile in qualunque momento dall'assemblea. Se senza giusta causa: diritto dell'amministratore al <strong>risarcimento del danno</strong> (compensi mancanti fino alla scadenza del mandato).</li>
+  <li>Cause di ineleggibilità/decadenza (art. 2382): interdetto, inabilitato, fallito, condannato a pena che importa interdizione dai pubblici uffici.</li>
+  <li>L'iscrizione al Registro delle imprese entro 30 giorni dalla nomina è atto di accettazione dell'incarico.</li>
+</ul>
+
+<h3>Altre cause di cessazione e sostituzione</h3>
+<ul>
+  <li>Rinuncia, morte, sopravvenuta causa di ineleggibilità, scadenza → <strong>prorogatio</strong> fino alla nomina dei nuovi.</li>
+  <li>Se viene meno qualcuno ma rimane la maggioranza: <strong>cooptazione</strong> (sostituzione deliberata dal consiglio con approvazione del collegio sindacale); i cooptati restano in carica fino alla prossima assemblea.</li>
+  <li>Se viene meno la maggioranza: l'assemblea ordinaria deve essere convocata d'urgenza.</li>
+  <li>Se cessa l'intero consiglio o l'amministratore unico: il collegio sindacale convoca d'urgenza l'assemblea e compie nel frattempo gli atti di ordinaria amministrazione.</li>
+</ul>
+
+<h3>Funzionamento del consiglio di amministrazione</h3>
+<ul>
+  <li>Organo collegiale: voto per teste (un voto per amministratore), a maggioranza assoluta dei presenti. Non ammessa la rappresentanza del voto.</li>
+  <li>Convocazione: spetta al presidente; può avvenire anche ad horas.</li>
+  <li>Invalidità delle delibere: solo annullabilità (no distinzione nullità/annullabilità). Legittimati: collegio sindacale, amministratori assenti o dissenzienti; i soci solo per delibere lesive dei loro diritti. Termine: 90 giorni.</li>
+</ul>
+
+<h3>Delega del potere gestorio (art. 2381)</h3>
+<div class="def">Il consiglio può delegare propri poteri ad un <strong>amministratore delegato</strong> o <strong>comitato esecutivo</strong> (se autorizzato dallo statuto o dall'assemblea ordinaria). La delega è pressoché generale, salvo materie non delegabili.</div>
+
+<h3>Materie non delegabili (art. 2381 co. 4)</h3>
+<ul>
+  <li>Predisposizione del progetto di bilancio.</li>
+  <li>Progetti di fusione e scissione.</li>
+  <li>Riduzione obbligatoria del capitale sociale (artt. 2446-2447).</li>
+  <li>Materie già delegate dall'assemblea straordinaria.</li>
+  <li>Decisioni relative all'attuazione di strumenti di gestione della crisi di competenza del CDA.</li>
+</ul>
+
+<p>I deleganti mantengono competenze concorrenti: possono sempre impartire direttive, avocare operazioni, revocare i delegati. I delegati riferiscono al CDA e al collegio sindacale almeno ogni 6 mesi. Gli amministratori non deleganti sono solidalmente responsabili se, a conoscenza di fatti pregiudizievoli, non hanno agito per impedirli.</p>
+
+<h3>Interessi degli amministratori (art. 2391)</h3>
+<ul>
+  <li>L'amministratore con un interesse in una operazione deve <strong>darne notizia</strong> agli altri amministratori e al collegio sindacale (natura, termini, origine, portata).</li>
+  <li>Se è amministratore delegato: deve <strong>astenersi</strong> e rimettere l'operazione al consiglio.</li>
+  <li>Se è amministratore unico: procede autonomamente ma informa la prima assemblea utile.</li>
+  <li>Il consiglio deve <strong>motivare</strong> la convenienza per la società dell'operazione.</li>
+  <li>La delibera adottata con voto determinante dell'amministratore interessato è impugnabile entro 90 giorni da amministratori e collegio sindacale, se può recare danno alla società.</li>
+  <li><strong>Corporate opportunity</strong>: l'amministratore non può deviare a vantaggio proprio o di terzi opportunità di affari appresi nell'esercizio dell'incarico.</li>
+</ul>
+
+<h3>Potere di rappresentanza (art. 2384)</h3>
+<ul>
+  <li>Il potere di rappresentanza è <strong>generale</strong> per legge (tutela dell'affidamento dei terzi).</li>
+  <li>Le limitazioni statutarie non sono opponibili ai terzi (anche se pubblicate), salvo prova che questi abbiano intenzionalmente agito a danno della società.</li>
+  <li>Gli amministratori che violano i limiti interni sono responsabili verso la società (risarcimento/revoca), ma l'atto è valido verso i terzi.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="responsabilita">4.9 Responsabilità degli amministratori</h2>
+
+<h3>Standard di diligenza (art. 2392)</h3>
+<div class="def">Gli amministratori devono adempiere i doveri imposti dalla legge e dallo statuto con la <strong>diligenza richiesta dalla natura dell'incarico</strong> (criterio oggettivo) e <strong>dalle loro specifiche competenze</strong> (criterio soggettivo). La competenza individuale può innalzare lo standard minimo.</div>
+
+<h3>Tre forme di responsabilità</h3>
+<table>
+  <thead><tr><th>Tipo</th><th>Presupposto</th><th>Legittimati ad agire</th><th>Termine</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Sociale</strong> (art. 2392)</td>
+      <td>Inadempimento dei doveri di legge/statuto + danno al patrimonio sociale in nesso causale. Responsabilità solidale tra tutti gli amministratori, salvo delega (in quel caso: delegati per atti propri; deleganti se conoscevano i fatti pregiudizievoli e non hanno agito). Esonerato chi annota senza ritardo il dissenso e ne dà notizia scritta al presidente del collegio sindacale.</td>
+      <td>Assemblea ordinaria; collegio sindacale (art. 2393 co. 3); soci che rappresentino almeno il 20% del capitale (art. 2393-bis). La delibera produce automaticamente revoca se adottata con il voto favorevole di almeno il 20% del capitale.</td>
+      <td>5 anni dalla cessazione dalla carica</td>
+    </tr>
+    <tr>
+      <td><strong>Verso i creditori</strong> (art. 2394)</td>
+      <td>Inosservanza degli obblighi di conservazione dell'integrità del patrimonio (inadempimento qualificato) + insufficienza del patrimonio al soddisfacimento dei crediti (danno qualificato). Azione autonoma e diretta dei creditori.</td>
+      <td>Creditori sociali (anche dopo rinuncia della società all'azione sociale). La transazione tra società e amministratori è opponibile ai creditori solo se il patrimonio resta capiente; altrimenti i creditori possono impugnarla con azione revocatoria. In caso di procedure concorsuali: curatore/commissario liquidatore (art. 2394-bis).</td>
+      <td>5 anni dalla manifestazione dell'insufficienza patrimoniale</td>
+    </tr>
+    <tr>
+      <td><strong>Verso singoli soci/terzi</strong> (art. 2395)</td>
+      <td>Danno diretto al patrimonio del socio o del terzo (non mediato dal danno al patrimonio sociale) da atti dolosi o colposi degli amministratori. Natura extracontrattuale (specificazione dell'art. 2043). L'onere probatorio è completo: atto illecito + danno diretto + nesso causale + dolo o colpa.</td>
+      <td>Singoli soci o terzi direttamente danneggiati</td>
+      <td>5 anni dall'atto pregiudizievole (interpretazione correttiva: dalla conoscenza dell'atto e del danno)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="exc">Gli amministratori di fatto (persone che gestiscono di fatto la società senza formale nomina) sono pienamente equiparati agli amministratori di diritto ai fini della responsabilità.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="sindacale">4.10 Collegio sindacale</h2>
+
+<h3>Composizione e requisiti</h3>
+<div class="art">Art. 2397: 3 o 5 membri effettivi (soci o non soci) + 2 sindaci supplenti. Almeno un effettivo e un supplente devono essere iscritti al registro dei revisori legali; i restanti devono essere iscritti agli albi professionali individuati con d.m. Giustizia o essere professori universitari di ruolo in materie economiche o giuridiche.</div>
+
+<ul>
+  <li>Durata: 3 esercizi; scadono all'assemblea per l'approvazione del bilancio del terzo esercizio.</li>
+  <li>Retribuzione: fissata dall'assemblea all'atto della nomina per l'intero periodo; <strong>non modificabile</strong> per garantire l'indipendenza.</li>
+  <li>Revoca: solo per <strong>giusta causa</strong>, con approvazione del tribunale (art. 2400 co. 2).</li>
+</ul>
+
+<h3>Cause di ineleggibilità/decadenza (art. 2399)</h3>
+<ul>
+  <li>Stesse cause previste per gli amministratori (art. 2382).</li>
+  <li>Coniuge, parenti e affini entro il 4° grado degli amministratori (della società, delle controllate, delle controllanti, delle sottoposte a comune controllo).</li>
+  <li>Soggetti legati alla società da rapporto di lavoro, consulenza continuativa o altri rapporti patrimoniali che ne compromettano l'indipendenza.</li>
+</ul>
+
+<h3>Funzionamento</h3>
+<ul>
+  <li>Riunione almeno ogni <strong>90 giorni</strong>; il sindaco che senza giustificato motivo non partecipa a 2 riunioni in un esercizio decade dall'ufficio.</li>
+  <li>I sindaci devono assistere alle adunanze del CDA, alle assemblee e alle riunioni del comitato esecutivo (decadenza se assenti ingiustificati a 2 adunanze consecutive del CDA).</li>
+  <li>Delibera a maggioranza assoluta dei presenti.</li>
+</ul>
+
+<h3>Funzioni e poteri</h3>
+<div class="art">Art. 2403: il collegio sindacale vigila sull'osservanza della legge e dello statuto, sul rispetto dei principi di corretta amministrazione, sull'adeguatezza dell'assetto organizzativo, amministrativo e contabile e sul suo concreto funzionamento. Il controllo è di <strong>legalità sostanziale</strong>, non di mero legittimità formale né di merito.</div>
+
+<ul>
+  <li>Impugnare delibere assembleari nulle e annullabili.</li>
+  <li>Impugnare delibere del CDA.</li>
+  <li>Denunciare gli amministratori al tribunale (art. 2409).</li>
+  <li>Convocare l'assemblea in caso di urgenza.</li>
+  <li>Ispezione e controllo, anche individuali (art. 2403-bis).</li>
+  <li>Competenza sostitutiva: convocare l'assemblea in caso di omissione degli amministratori (art. 2406); compiere atti di ordinaria amministrazione se cessa l'intero CDA (art. 2386).</li>
+</ul>
+
+<h3>Responsabilità dei sindaci (art. 2407)</h3>
+<ul>
+  <li><strong>Autonoma</strong>: per violazione degli obblighi di diligenza e professionalità; per falsità delle proprie attestazioni; per violazione del segreto professionale.</li>
+  <li><strong>Solidale con gli amministratori</strong>: per i danni derivanti da omessa o insufficiente vigilanza sull'operato degli amministratori.</li>
+  <li>Massimale del danno (recente riforma): 15x il compenso annuo (fino a 10.000 €); 12x (da 10.000 a 50.000 €); 10x (oltre 50.000 €).</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="capitale">4.11 Aumento e riduzione del capitale sociale</h2>
+
+<h3>Aumento reale (a pagamento)</h3>
+<ul>
+  <li>Delibera dell'assemblea straordinaria (delegabile agli amministratori per max 5 anni).</li>
+  <li>Nuovi conferimenti → nuovo capitale → nuove azioni emesse.</li>
+  <li>Le azioni precedentemente emesse devono essere interamente liberate prima dell'aumento (art. 2438).</li>
+</ul>
+
+<h3>Diritto di opzione (art. 2441)</h3>
+<div class="def">Ciascun azionista ha il <strong>diritto soggettivo di sottoscrivere preferenzialmente le azioni di nuova emissione</strong>, in proporzione alle azioni già possedute. Scopo: evitare ingressi indesiderati; preservare l'equilibrio di potere tra soci; limitare la discrezionalità degli amministratori nella scelta dei nuovi soci.</div>
+<ul>
+  <li>Il diritto spetta anche agli obbligazionisti convertibili (come soci potenziali).</li>
+  <li>Il socio può cedere a terzi il proprio diritto di opzione.</li>
+  <li>Dopo l'esercizio del diritto, il socio può esercitare la <strong>prelazione sull'inoptato</strong> (co. 3): se rimangono azioni non sottoscritte, se le richiede prima che vadano a terzi.</li>
+  <li>Il diritto di opzione <strong>non può essere escluso o limitato statutariamente</strong>, ma può esserlo dalla delibera di aumento.</li>
+</ul>
+
+<h3>Cause di esclusione del diritto di opzione</h3>
+<ul>
+  <li>Azioni da liberare con conferimenti in natura (solo chi ha il bene può sottoscrivere).</li>
+  <li>Azioni offerte in sottoscrizione ai dipendenti (delibera assembleare straordinaria).</li>
+  <li>Interesse della società adeguatamente motivato nella delibera di aumento (co. 5): se l'esclusione è insufficientemente motivata la delibera è impugnabile.</li>
+  <li>Quando il diritto è escluso, le azioni devono essere emesse con <strong>sovrapprezzo</strong> (= valore reale – valore nominale).</li>
+</ul>
+
+<h3>Aumento gratuito (art. 2442)</h3>
+<p>Imputazione a capitale di riserve disponibili: le nuove azioni sono assegnate <strong>gratuitamente</strong> agli azionisti in proporzione alle azioni già possedute (o aumento del valore nominale). Mostra solidità ai terzi; non delegabile agli amministratori.</p>
+
+<h3>Riduzione reale</h3>
+<ul>
+  <li>Sempre facoltativa (dal 2004: per qualunque ragione ritenuta utile dai soci).</li>
+  <li>Delibera dell'assemblea straordinaria, motivata, con indicazione delle modalità nell'avviso di convocazione.</li>
+  <li>Modalità: riduzione del valore nominale delle azioni (parità di trattamento) o riduzione proporzionale per ciascun socio.</li>
+  <li>Effetti dopo <strong>90 giorni</strong>: entro tale termine i creditori possono opporsi al tribunale; il giudice può inibire o condizionare la riduzione alla prestazione di garanzie.</li>
+  <li>Ai soci le cui azioni vengono annullate spettano <strong>azioni di godimento</strong> (art. 2353): senza voto; partecipano agli utili in misura marginale; al momento della liquidazione concorrono alla distribuzione del residuo dopo il rimborso delle azioni ordinarie al nominale.</li>
+</ul>
+
+<h3>Riduzione nominale (per perdite)</h3>
+<div class="art">Art. 2446: quando il capitale è diminuito di oltre 1/3 in conseguenza di perdite (che abbiano eroso tutte le riserve), gli amministratori devono convocare senza indugio l'assemblea per gli opportuni provvedimenti.</div>
+<p>Possibili provvedimenti assembleari: (1) riduzione immediata del capitale; (2) riduzione e contestuale aumento; (3) apporti volontari dei soci (versamenti a titolo di liberalità); (4) rinvio a nuovo (attesa della chiusura dell'esercizio successivo — se la perdita persiste, la riduzione è obbligatoria).</p>
+
+<div class="art">Art. 2447: se la perdita riduce il capitale al di sotto del minimo legale (50.000 €), l'assemblea deve deliberare senza indugio la riduzione con contestuale aumento al minimo, oppure la trasformazione in altro tipo. In mancanza, la società si scioglie.</div>
+
+<div class="exc">Sovrapprezzo: le azioni non possono essere emesse sotto il valore nominale (divieto di emissione sotto la pari). I nuovi soci che entrano dopo la costituzione devono pagare il valore reale dell'azione: valore nominale + sovrapprezzo (destinato a riserva). Questo preserva il valore delle azioni già in circolazione.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="obbligazioni">4.12 Emissione di obbligazioni</h2>
+
+<div class="def">Le obbligazioni sono frazioni standardizzate e omogenee di un'operazione di mutuo tra la società e i sottoscrittori. L'obbligazionista è creditore (non socio): ha diritto alla restituzione del capitale e alla percezione periodica degli interessi, ma nessun diritto sociale.</div>
+
+<h3>Competenza</h3>
+<p>Agli <strong>amministratori</strong> (riforma 2003/2004), come atto gestorio; lo statuto può attribuirla all'assemblea straordinaria. In ogni caso la delibera deve essere verbalizzata per atto pubblico e iscritta al Registro delle imprese (art. 2410).</p>
+
+<h3>Tipi di obbligazioni</h3>
+<ul>
+  <li><strong>Ordinarie</strong>: restituzione del capitale + interessi fissi.</li>
+  <li><strong>Subordinate/postergate</strong>: soddisfatte dopo altri creditori.</li>
+  <li><strong>A premio</strong>: con dotazione economica periodica.</li>
+  <li><strong>Indicizzate</strong>: interesse ancorato a un indice (EURIBOR, indice di borsa ecc.).</li>
+</ul>
+
+<h3>Limite quantitativo (art. 2412)</h3>
+<p>Le obbligazioni non possono superare il <strong>doppio del patrimonio netto</strong> (capitale sociale + riserva legale + altre riserve). Il rapporto deve permanere per tutta la durata del prestito. Eccezioni: obbligazioni destinate a investitori professionali; obbligazioni quotate; obbligazioni convertibili; obbligazioni garantite da ipoteca di primo grado (fino a 2/3 del valore degli immobili).</p>
+
+<h3>Assemblea degli obbligazionisti (artt. 2415-2419)</h3>
+<p>Per ogni emissione si costituisce un'assemblea degli obbligazionisti con un rappresentante comune. Competenze principali: delibera sulla proposta di concordato; delibera sulle modificazioni delle condizioni del prestito (a maggioranza).</p>
+
+<h3>Obbligazioni convertibili in azioni (art. 2420-bis)</h3>
+<div class="def">Gli obbligazionisti possono scegliere, in alternativa alla restituzione del capitale, di convertire le obbligazioni in azioni (passaggio dalla causa di mutuo alla causa di società). Sono <strong>azioni potenziali</strong>: l'obbligazionista convertibile è un socio potenziale.</div>
+<ul>
+  <li>Competenza: assemblea straordinaria (delegabile per max 5 anni).</li>
+  <li>La delibera di emissione è una <strong>doppia delibera</strong>: emissione del prestito + aumento del capitale "di servizio" per le azioni da attribuire in conversione (a pena di nullità). L'aumento è istituzionalmente scindibile.</li>
+  <li>Gli azionisti hanno diritto di opzione sulla sottoscrizione di obbligazioni convertibili; gli obbligazionisti convertibili hanno diritto di opzione sugli aumenti di capitale durante la pendenza del prestito.</li>
+  <li>Il rapporto di cambio (quante obbligazioni = quante azioni) deve essere indicato nella delibera e nel titolo.</li>
+  <li>Gli amministratori emettono le azioni nel primo mese di ciascun semestre per le conversioni del semestre precedente.</li>
+  <li>Non si applica il limite del doppio del patrimonio netto.</li>
+  <li>Diritto di conversione anticipata: se la società delibera riduzione reale del capitale o modifica delle regole sugli utili, gli obbligazionisti convertibili devono poter convertire prima.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="recesso">4.13 Diritto di recesso (artt. 2437–2437-quinquies)</h2>
+
+<div class="def">Il recesso consente al socio di uscire dalla società a <strong>valore equo</strong> in presenza di modifiche radicali delle condizioni originarie dell'investimento. Nella riforma 2003/2004 è stato rivalutato come strumento di disinvestimento alternativo alla cessione nelle società chiuse.</div>
+
+<h3>Cause di recesso</h3>
+<table>
+  <thead><tr><th>Tipo</th><th>Cause</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Inderogabili</strong> (art. 2437 co. 1, 3 e 5)</td>
+      <td>a) Modifica significativa dell'oggetto sociale; b) trasformazione della società; c) [abrogata: trasferimento sede all'estero]; d) revoca dello stato di liquidazione; e) eliminazione di cause di recesso facoltative o statutarie; f) modifica dei criteri di determinazione del valore dell'azione in caso di recesso; g) modificazioni concernenti i diritti di voto o di partecipazione. Società a tempo indeterminato non quotata: recesso libero con preavviso di <strong>180 giorni</strong> (statuto: max 1 anno).</td>
+    </tr>
+    <tr>
+      <td><strong>Derogabili</strong> (art. 2437 co. 2)</td>
+      <td>Proroga del termine; introduzione o rimozione di vincoli alla circolazione dei titoli azionari. Possono essere escluse dallo statuto (clausole opt-out).</td>
+    </tr>
+    <tr>
+      <td><strong>Statutarie</strong> (art. 2437 co. 4)</td>
+      <td>Solo per le società chiuse; eventuali, previste dallo statuto.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="exc">È nullo ogni patto volto ad escludere o rendere più gravoso l'esercizio del recesso per le cause inderogabili.</div>
+
+<h3>Legittimati</h3>
+<p>I soci che non abbiano <em>concorso</em> alla delibera (assenti, dissenzienti, astenuti). Possono recedere con tutte o parte delle proprie azioni.</p>
+
+<h3>Procedimento (art. 2437-bis)</h3>
+<p>Lettera raccomandata entro <strong>15 giorni</strong> dall'iscrizione della delibera al Registro delle imprese, con indicazione del socio, causa del recesso e numero di azioni. Il recesso è inefficace se entro 90 giorni la società revoca la delibera o delibera lo scioglimento.</p>
+
+<h3>Valore di liquidazione (art. 2437-ter)</h3>
+<p>Determinato dagli amministratori sentiti il collegio sindacale e il revisore, tenendo conto della consistenza patrimoniale, delle prospettive reddituali e dell'eventuale valore di mercato. Gli amministratori devono comunicare il valore nei 15 giorni precedenti l'assemblea. I soci che non lo condividono possono ricorrere al tribunale per la nomina di un esperto.</p>
+
+<h3>Procedimento di liquidazione (art. 2437-quater)</h3>
+<ol>
+  <li>Offerta in opzione agli altri soci.</li>
+  <li>Prelazione degli altri soci sull'inoptato.</li>
+  <li>Collocamento sul mercato a cura degli amministratori.</li>
+  <li>Acquisto da parte della società con utili o riserve disponibili (senza il limite del 20%).</li>
+  <li>Riduzione reale del capitale con annullamento delle azioni o scioglimento della società.</li>
+</ol>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="scioglimento">4.14 Scioglimento e liquidazione</h2>
+
+<h3>Cause di scioglimento (art. 2484)</h3>
+<ol>
+  <li>Decorso del termine (proroga espressa con delibera unanime dell'assemblea straordinaria, iscritta prima del termine).</li>
+  <li>Conseguimento dell'oggetto sociale o sopravvenuta impossibilità di conseguirlo (salvo modifica statutaria).</li>
+  <li>Impossibilità di funzionamento o continuata inattività dell'assemblea (ordinaria).</li>
+  <li>Riduzione del capitale al di sotto del minimo legale (salvo riduzione + aumento o trasformazione).</li>
+  <li>Ipotesi previste dagli artt. 2437-quater e 2473 (recesso con impossibilità di liquidare le quote).</li>
+  <li>Deliberazione dell'assemblea straordinaria (scioglimento anticipato volontario).</li>
+  <li>Altre cause previste dallo statuto.</li>
+  <li>Apertura della liquidazione giudiziale o della liquidazione controllata.</li>
+</ol>
+
+<p>Gli effetti si verificano alla data dell'iscrizione nel Registro delle imprese della dichiarazione degli amministratori (per le cause automatiche) o della delibera (per lo scioglimento volontario). Gli amministratori che omettono o ritardano l'accertamento della causa di scioglimento sono personalmente e solidalmente responsabili dei danni (art. 2485).</p>
+
+<h3>Poteri degli amministratori dopo lo scioglimento (art. 2486)</h3>
+<div class="def">Al verificarsi della causa di scioglimento e fino alla consegna ai liquidatori, gli amministratori conservano il potere di gestire la società ai <strong>soli fini della conservazione dell'integrità e del valore del patrimonio sociale</strong>. Responsabilità personale e solidale per atti compiuti in violazione.</div>
+
+<h3>Quantificazione del danno da prosecuzione abusiva</h3>
+<ul>
+  <li><strong>Criterio differenziale</strong>: differenza tra il patrimonio netto alla cessazione dell'amministratore (o all'apertura della procedura concorsuale) e il patrimonio netto alla data in cui si è verificata la causa di scioglimento, dedotti i costi normali del periodo.</li>
+  <li><strong>Criterio del deficit</strong> (se mancano le scritture o non si possono determinare i netti): differenza tra passivo e attivo accertati nella procedura concorsuale.</li>
+</ul>
+
+<h3>Fase di liquidazione</h3>
+<ul>
+  <li>L'assemblea straordinaria nomina i liquidatori, stabilisce chi ha la rappresentanza e definisce i poteri (art. 2487).</li>
+  <li>I liquidatori compiono tutti gli atti utili per la liquidazione; redigono il bilancio di liquidazione alla fine di ogni esercizio.</li>
+  <li>La società può revocare lo stato di liquidazione; effetti dopo 60 giorni dall'iscrizione (causa di recesso inderogabile).</li>
+</ul>
+
+<h3>Destinazione del patrimonio liquidato</h3>
+<ol>
+  <li><strong>Pagamento dei creditori sociali</strong> (absolute priority rule): fino a esaurimento; se insufficiente i liquidatori possono richiedere ai soci i versamenti ancora dovuti.</li>
+  <li><strong>Rimborso dei conferimenti</strong> al valore nominale.</li>
+  <li><strong>Ripartizione del residuo</strong> tra i soci in base alla partecipazione agli utili (rispettando le azioni speciali e le azioni di godimento).</li>
+</ol>
+
+<p>L'estinzione coincide con la <strong>cancellazione dal Registro delle imprese</strong>. Dopo la cancellazione, i creditori non soddisfatti possono agire contro i soci (fino alle somme riscosse in liquidazione) e contro i liquidatori se il mancato pagamento dipese da loro colpa (art. 2495 co. 3; termine 1 anno dalla cancellazione). Le eventuali sopravvenienze attive generano una <em>comunione ordinaria</em> tra i soci.</p>
+  </div>
+
+  <!-- ══ SEZIONE 5 ══ -->
+  <div id="s5" class="section">
+    <button class="back-btn" onclick="goHome()">← Torna al menu</button>
+<h1>5. Società in accomandita per azioni</h1>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#natura">Natura e collocazione sistematica</a></li>
+    <li><a href="#categorie">Le due categorie di soci</a></li>
+    <li><a href="#governance">Governance: nomina, revoca e diritto di veto</a></li>
+    <li><a href="#responsabilita">Responsabilità degli accomandatari</a></li>
+    <li><a href="#scioglimento">Causa di scioglimento peculiare</a></li>
+  </ol>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="natura">5.1 Natura e collocazione sistematica</h2>
+
+<div class="def">La s.a.p.a. è una <strong>società di capitali</strong> — non una via di mezzo tra s.a.s. e s.p.a. — in cui è presente una categoria di soci accomandatari che rispondono personalmente e illimitatamente delle obbligazioni sociali. Per tutto ciò che non è derogato dalle norme specifiche si applica la disciplina della s.p.a.</div>
+
+<p>La s.a.p.a. è rimasta a lungo un tipo residuale; ha conosciuto un utilizzo pratico rilevante in Italia a partire dagli anni '80, quando venne adottata come struttura della holding Giovanni Agnelli & c. s.a.p.a. La ragione era sfruttare il meccanismo di nomina degli amministratori che consente un controllo stabile sulla società indipendentemente dall'assetto proprietario delle azioni.</p>
+
+<h3>Confronto con la s.a.s.</h3>
+<table>
+  <thead><tr><th></th><th>S.a.s.</th><th>S.a.p.a.</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Tipo</strong></td><td>Società di persone</td><td>Società di capitali</td></tr>
+    <tr><td><strong>Accomandatari e amministrazione</strong></td><td>Gli amministratori devono essere scelti tra gli accomandatari, ma non tutti gli accomandatari sono necessariamente amministratori</td><td>Tutti gli accomandatari sono per forza amministratori, e solo gli accomandatari possono essere amministratori</td></tr>
+    <tr><td><strong>Cessazione dalla carica</strong></td><td>L'accomandatario revocato perde la carica ma resta accomandatario</td><td>L'accomandatario revocato cessa di essere amministratore <em>e</em> di essere accomandatario, diventando accomandante (responsabilità limitata)</td></tr>
+    <tr><td><strong>Portata della responsabilità illimitata</strong></td><td>Per tutte le obbligazioni sociali (passate e future)</td><td>Solo per le obbligazioni sorte nel periodo in cui si è rivestita la carica di amministratore</td></tr>
+  </tbody>
+</table>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="categorie">5.2 Le due categorie di soci</h2>
+
+<table>
+  <thead><tr><th></th><th>Accomandatari</th><th>Accomandanti</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Ruolo</strong></td><td>Necessariamente e contemporaneamente amministratori della società</td><td>Soci capitalisti; non amministrano</td></tr>
+    <tr><td><strong>Responsabilità</strong></td><td>Personale, illimitata e solidale per le obbligazioni sorte durante il loro mandato</td><td>Limitata al conferimento (come nelle s.p.a.)</td></tr>
+    <tr><td><strong>Partecipazione azionaria</strong></td><td>Titolari di azioni (come tutti gli altri soci); la carica di accomandatario/amministratore si aggiunge alla posizione di azionista</td><td>Titolari di azioni ordinarie o di categorie speciali</td></tr>
+    <tr><td><strong>Mandato</strong></td><td>Senza scadenza: la posizione è strutturalmente stabile</td><td>—</td></tr>
+  </tbody>
+</table>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="governance">5.3 Governance: nomina, revoca e diritto di veto</h2>
+
+<div class="def">Il tratto distintivo della governance della s.a.p.a. è il <strong>diritto di veto degli amministratori-accomandatari</strong>: la nomina e la revoca di nuovi accomandatari/amministratori, nonché qualsiasi modifica dell'atto costitutivo, richiedono sia la delibera dell'assemblea straordinaria (con le sue maggioranze qualificate) sia il <strong>consenso unanime</strong> degli amministratori in carica.</div>
+
+<ul>
+  <li>Chi detiene anche il 100% delle azioni non può imporre la nomina di un amministratore di propria scelta senza il consenso degli amministratori già in carica.</li>
+  <li>Il diritto di veto si estende a <strong>qualsiasi modifica dell'atto costitutivo</strong>: gli accomandatari possono così impedire ogni adeguamento dell'assetto organizzativo della società.</li>
+  <li>Il mandato senza scadenza, combinato con il veto, rende la posizione degli accomandatari estremamente solida anche di fronte a cambiamenti nell'azionariato (rilevante nelle società quotate).</li>
+</ul>
+
+<h3>Procedimento di nomina e revoca</h3>
+<ul>
+  <li>Competenza: <strong>assemblea straordinaria</strong>.</li>
+  <li>Requisito aggiuntivo: <strong>consenso unanime degli amministratori</strong> in carica.</li>
+  <li>La revoca di un accomandatario lo fa decadere contestualmente dalla carica di amministratore e dalla categoria di accomandatario; diventa accomandante con responsabilità limitata.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="responsabilita">5.4 Responsabilità degli accomandatari</h2>
+
+<ul>
+  <li>Responsabilità personale, illimitata e solidale, ma <strong>limitata al periodo</strong> in cui si è rivestita la qualità di accomandatario-amministratore (diversamente dagli accomandatari della s.a.s., che rispondono di tutte le obbligazioni sociali senza distinzione temporale).</li>
+  <li>In caso di apertura della liquidazione giudiziale nei confronti della s.a.p.a., questa <strong>si estende di diritto e automaticamente</strong> ai soci accomandatari, indipendentemente dalla portata della loro responsabilità.</li>
+</ul>
+
+<div class="exc">L'estensione automatica della liquidazione giudiziale agli accomandatari opera anche se questi rispondono solo delle obbligazioni del periodo di amministrazione e non di tutte le obbligazioni sociali. La procedura concorsuale investirà il loro patrimonio personale, ma solo nei limiti delle obbligazioni per le quali erano illimitatamente responsabili.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="scioglimento">5.5 Causa di scioglimento peculiare</h2>
+
+<div class="art">Art. 2458: in caso di cessazione dall'ufficio di <em>tutti</em> gli amministratori (tutti gli accomandatari), la società si scioglie se nel termine di <strong>180 giorni</strong> non si è provveduto alla loro sostituzione e i sostituti non hanno accettato la carica.</div>
+
+<ul>
+  <li>Durante i 180 giorni, il <strong>collegio sindacale</strong> nomina un amministratore provvisorio per il compimento degli atti di ordinaria amministrazione; questi non acquista la qualità di socio accomandatario.</li>
+  <li>La nomina dei nuovi accomandatari-amministratori richiede il consenso di quelli cessati (che nel frattempo sono diventati accomandanti)? Il punto è dibattuto; in pratica la sostituzione avviene per delibera dell'assemblea straordinaria.</li>
+</ul>
+
+<h3>Cessazione di tutti gli accomandanti</h3>
+<div class="exc">La legge non disciplina espressamente la cessazione di tutti gli accomandanti. Due tesi: (1) entro 180 giorni bisogna ricostituire la categoria (per analogia con le altre cause di scioglimento); (2) secondo Campobasso, la società può proseguire finché non occorra convocare l'assemblea — a quel punto, non potendo funzionare, si scioglierebbe.</div>
+  </div>
+
+  <!-- ══ SEZIONE 6 ══ -->
+  <div id="s6" class="section">
+    <button class="back-btn" onclick="goHome()">← Torna al menu</button>
+<h1>6. Società a responsabilità limitata</h1>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#natura">Natura e fisionomia dopo la riforma 2003</a></li>
+    <li><a href="#conferimenti">Conferimenti e capitale sociale</a></li>
+    <li><a href="#quote">Quote di partecipazione e loro circolazione</a></li>
+    <li><a href="#governance">Rapporto soci-amministratori e governance</a></li>
+    <li><a href="#controllo">Controllo interno</a></li>
+    <li><a href="#finanziamento">Finanziamento e postergazione</a></li>
+  </ol>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="natura">6.1 Natura e fisionomia dopo la riforma 2003</h2>
+
+<div class="def">La s.r.l. è una società di capitali con responsabilità limitata di tutti i soci, costruita a partire dalla riforma 2003/2004 sulla <strong>centralità della persona del socio</strong> e dei rapporti contrattuali tra soci — in contrapposizione alla s.p.a., che è centrata sulla centralità dell'azione e della sua libera circolazione.</div>
+
+<h3>Evoluzione normativa</h3>
+<ul>
+  <li>Codice del 1942: la s.r.l. era una "piccola s.p.a. senza azioni", disciplina quasi identica.</li>
+  <li>Riforma 2003/2004: la s.r.l. acquista fisionomia autonoma — duttile, personalistica, con ampio spazio all'autonomia statutaria.</li>
+  <li>Dal 2012: stagione di riforme per aprire la s.r.l. al mercato dei capitali (s.r.l. aperta), senza però modificare la struttura organizzativa. La disciplina del codice civile riguarda la <strong>s.r.l. chiusa</strong>.</li>
+</ul>
+
+<h3>S.r.l. vs. s.p.a.: differenze fondamentali</h3>
+<table>
+  <thead><tr><th></th><th>S.r.l.</th><th>S.p.a.</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Partecipazione</strong></td><td>Quote (non rappresentabili da azioni, non collocabili tra il pubblico)</td><td>Azioni liberamente trasferibili e negoziabili</td></tr>
+    <tr><td><strong>Persona del socio</strong></td><td>Centrale: diritti particolari personali; quote non facilmente fungibili</td><td>Fungibile: i diritti sono incorporati nelle azioni</td></tr>
+    <tr><td><strong>Conferimenti</strong></td><td>Ammessi anche prestazioni d'opera e servizi (con garanzia)</td><td>Vietati conferimenti di opera o servizi</td></tr>
+    <tr><td><strong>Valutazione conferimenti in natura</strong></td><td>Perizia di revisore legale scelto dal socio</td><td>Perizia di esperto nominato dal tribunale</td></tr>
+    <tr><td><strong>Capitale minimo</strong></td><td>10.000 € (o anche 1 € con norme speciali)</td><td>50.000 €</td></tr>
+    <tr><td><strong>Organo di controllo</strong></td><td>Facoltativo sotto certe soglie</td><td>Collegio sindacale obbligatorio</td></tr>
+    <tr><td><strong>Governance</strong></td><td>Ampia autonomia statutaria; ammessi tutti i modelli (anche personalistici)</td><td>Modelli tipici e rigidi (tradizionale, dualistico, monistico)</td></tr>
+    <tr><td><strong>Obbligazioni</strong></td><td>Non emettibili (solo titoli di debito per investitori professionali)</td><td>Emettibili</td></tr>
+    <tr><td><strong>Azione sociale di responsabilità</strong></td><td>Spetta al singolo socio, indipendentemente dalla quota</td><td>Spetta all'assemblea (o a soci che rappresentino il 20% del capitale)</td></tr>
+  </tbody>
+</table>
+
+<p>La s.r.l. può nascere da socio unico o diventare unipersonale nel corso della vita. Il socio unico risponde illimitatamente se non ha integralmente eseguito il proprio conferimento o ha violato le norme in materia di costituzione e iscrizione.</p>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="conferimenti">6.2 Conferimenti e capitale sociale</h2>
+
+<div class="art">Art. 2464 co. 2: possono essere conferiti tutti gli elementi dell'attivo suscettibili di valutazione economica.</div>
+
+<h3>Tipi di conferimento</h3>
+<table>
+  <thead><tr><th>Tipo</th><th>Disciplina</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Denaro</strong></td>
+      <td>Forma di default se l'atto costitutivo non dispone diversamente</td>
+    </tr>
+    <tr>
+      <td><strong>Beni in natura e crediti</strong></td>
+      <td>Perizia giurata di un revisore legale o società di revisione iscritti al registro (art. 2465), scelti dal socio stesso (non dal tribunale come nella s.p.a.). Deve contenere descrizione, criteri di valutazione e attestazione di copertura del capitale nominale.</td>
+    </tr>
+    <tr>
+      <td><strong>Prestazioni d'opera o servizi</strong></td>
+      <td>Ammesse se l'atto costitutivo le prevede (art. 2464 co. 6). Il socio deve prestare una <strong>polizza assicurativa</strong> o una <strong>fideiussione bancaria</strong> per l'intero valore, a garanzia dell'adempimento. In alternativa (se previsto dall'atto costitutivo): versamento a titolo di cauzione dell'importo corrispondente. In caso di inadempimento o impossibilità sopravvenuta, la società escute la garanzia.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Capitale sociale e riserva legale</h3>
+<ul>
+  <li>Minimo ordinario: <strong>10.000 €</strong> (art. 2463 co. 2 n. 4).</li>
+  <li>Minimo ridotto: <strong>da 1 €</strong> a 9.999 € (art. 2463 co. 4): i conferimenti devono essere eseguiti <em>interamente in denaro</em> e versati alle persone incaricate dell'amministrazione.</li>
+  <li>Con capitale ridotto: al termine di ogni esercizio si deduce a riserva legale il <strong>20% degli utili netti</strong> fino a raggiungere un patrimonio di 10.000 €.</li>
+  <li>Il capitale sociale non è diviso in azioni ma in <strong>quote</strong>; ogni socio ha una quota il cui valore corrisponde al proprio conferimento.</li>
+</ul>
+
+<div class="art">Art. 2468: le partecipazioni dei soci non possono essere rappresentate da azioni né costituire oggetto di offerta al pubblico di prodotti finanziari.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="quote">6.3 Quote di partecipazione e loro circolazione</h2>
+
+<h3>Struttura delle quote</h3>
+<ul>
+  <li>Salvo diversa disposizione statutaria, la quota è proporzionale al conferimento; anche i diritti di partecipazione sono proporzionali alla quota.</li>
+  <li>L'atto costitutivo può prevedere quote non proporzionali al conferimento (entro il limite: valore complessivo dei conferimenti ≥ capitale sociale nominale).</li>
+  <li>La differenziazione tra quote e diritti avviene tramite l'attribuzione di <strong>diritti particolari</strong> a singoli soci (art. 2468 co. 3): diritti riguardanti l'amministrazione o la distribuzione degli utili. Questi diritti sono personali al socio: non si trasferiscono con la quota.</li>
+</ul>
+
+<h3>Circolazione delle quote</h3>
+<div class="art">Art. 2469: le partecipazioni sono liberamente trasferibili per atto tra vivi e per successione a causa di morte, salvo contraria disposizione dell'atto costitutivo.</div>
+
+<ul>
+  <li>Lo statuto può limitare o <em>escludere</em> il trasferimento delle quote, oppure subordinarlo al gradimento di organi sociali.</li>
+  <li>Correttivo obbligatorio a tutela del socio: le clausole di <strong>intrasferibilità assoluta</strong> o di <strong>mero gradimento</strong> senza alternativa di uscita legittimano il socio a <strong>recedere in qualunque momento</strong>, per il solo fatto che il vincolo esiste.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="governance">6.4 Rapporto soci-amministratori e governance</h2>
+
+<div class="def">La governance della s.r.l. è fondata sull'<strong>autonomia statutaria</strong>: lo statuto definisce le competenze rispettive dei soci e degli amministratori, salvo le riserve di legge. Sono ammessi tutti i modelli di amministrazione, inclusi quelli propri delle società personali (disgiuntiva, congiuntiva).</div>
+
+<h3>Competenze riservate ai soci (art. 2479)</h3>
+<ul>
+  <li>Materie riservate dall'atto costitutivo.</li>
+  <li>Argomenti che uno o più amministratori, o soci che rappresentino almeno 1/3 del capitale, sottopongono all'approvazione dei soci.</li>
+  <li>In ogni caso riservate ai soci (inderogabili): approvazione del bilancio, nomina e revoca degli amministratori, operazioni che comportino una <strong>sostanziale modificazione dell'oggetto sociale</strong> o una <strong>rilevante modificazione dei diritti dei soci</strong>.</li>
+</ul>
+
+<h3>Modalità decisionali dei soci</h3>
+<ul>
+  <li>Assemblea (regola).</li>
+  <li>L'atto costitutivo può prevedere che le decisioni siano adottate mediante <strong>consultazione scritta</strong> o <strong>consenso espresso per iscritto</strong>: dai documenti devono risultare con chiarezza l'argomento e il consenso.</li>
+</ul>
+
+<h3>Amministrazione</h3>
+<div class="art">Art. 2475: l'istituzione degli assetti organizzativi, amministrativi e contabili adeguati (art. 2086 co. 2) spetta esclusivamente agli amministratori. Salvo diversa disposizione, l'amministrazione è affidata a uno o più soci nominati con decisione dei soci.</div>
+
+<ul>
+  <li>Gli amministratori possono essere soci o non soci.</li>
+  <li>Ammessi tutti i modelli: monocratico, collegiale, disgiuntivo, congiuntivo.</li>
+  <li>Il potere di rappresentanza spetta agli amministratori e ha conformazione legale (analoga alla s.p.a.): le limitazioni non sono opponibili ai terzi.</li>
+</ul>
+
+<h3>Diritti di controllo dei soci non amministratori</h3>
+<div class="art">Art. 2476 co. 2: i soci che non partecipano all'amministrazione hanno diritto di avere dagli amministratori notizie sullo svolgimento degli affari sociali e di consultare, anche tramite professionisti di loro fiducia, i libri sociali e i documenti relativi all'amministrazione.</div>
+
+<h3>Azione sociale di responsabilità (art. 2476)</h3>
+<ul>
+  <li>Spetta al <strong>singolo socio</strong>, indipendentemente dalla sua quota di partecipazione (<em>controllo privatizzato</em>).</li>
+  <li>L'esercizio del diritto di controllo (ispezione libri e documenti) è presupposto per l'esperimento dell'azione.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="controllo">6.5 Controllo interno</h2>
+
+<p>Nella s.r.l. il collegio sindacale (o organo equivalente) non è di regola obbligatorio. Lo diventa al ricorrere di almeno una delle seguenti condizioni (art. 2477):</p>
+
+<ul>
+  <li>La società è tenuta alla redazione del <strong>bilancio consolidato</strong>.</li>
+  <li>La società <strong>controlla</strong> una società obbligata alla revisione legale dei conti.</li>
+  <li>La società ha superato per <strong>due esercizi consecutivi</strong> almeno uno dei seguenti limiti: totale attivo stato patrimoniale > 4 milioni di €; ricavi delle vendite e delle prestazioni > 4 milioni di €; dipendenti occupati in media durante l'esercizio > 20 unità.</li>
+</ul>
+
+<div class="exc">Al di sotto delle soglie, il controllo contabile è affidato ai singoli soci (diritto di ispezione individuale ex art. 2476 co. 2), senza necessità di un organo formale. Questa è una delle differenze più significative rispetto alla s.p.a.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="finanziamento">6.6 Finanziamento e postergazione</h2>
+
+<h3>Titoli di debito (no obbligazioni)</h3>
+<ul>
+  <li>La s.r.l. <strong>non può emettere obbligazioni</strong>.</li>
+  <li>Può emettere <strong>titoli di debito</strong> (simili alle obbligazioni), ma questi possono essere sottoscritti solo da <strong>investitori professionali o istituzionali</strong>.</li>
+  <li>Se gli investitori professionali cedono i titoli a privati, diventano <strong>fideiussori</strong> della società nei confronti dei privati acquirenti.</li>
+  <li>Lo strumento ha avuto scarso successo in pratica.</li>
+</ul>
+
+<h3>Postergazione dei finanziamenti dei soci (art. 2467)</h3>
+<div class="def">I finanziamenti dei soci a favore della società sono postergati rispetto alla soddisfazione degli altri creditori e, se rimborsati nell'anno precedente la dichiarazione di insolvenza, devono essere restituiti.</div>
+<ul>
+  <li>Ratio: se la società nasce sottocapitalizzata e i soci, anziché effettuare conferimenti adeguati all'oggetto sociale, preferiscono finanziare la società diventandone creditori, questi finanziamenti non devono penalizzare i creditori terzi.</li>
+  <li>La regola trova conferma nel codice della crisi d'impresa.</li>
+  <li>Si applica quando il finanziamento è stato concesso in un momento in cui risultava un eccessivo squilibrio tra indebitamento e patrimonio netto, oppure in una situazione finanziaria della società in cui sarebbe stato ragionevole un conferimento.</li>
+</ul>
+  </div>
+
+  <!-- ══ SEZIONE 7 ══ -->
+  <div id="s7" class="section">
+    <button class="back-btn" onclick="goHome()">← Torna al menu</button>
+<h1>7. Bilancio</h1>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#funzioni">Funzioni del bilancio</a></li>
+    <li><a href="#struttura">Struttura piramidale e clausole generali</a></li>
+    <li><a href="#principi">Principi tecnici di redazione</a></li>
+    <li><a href="#composizione">Composizione del bilancio</a></li>
+    <li><a href="#conto">Conto economico</a></li>
+    <li><a href="#patrimoniale">Stato patrimoniale</a></li>
+    <li><a href="#procedimento">Procedimento di approvazione</a></li>
+  </ol>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="funzioni">7.1 Funzioni del bilancio</h2>
+
+<div class="def">Il bilancio è il documento contabile che rappresenta con chiarezza e in modo veritiero e corretto la situazione patrimoniale e finanziaria della società al termine di ciascun esercizio sociale, e il risultato economico (utile o perdita) del singolo esercizio concluso.</div>
+
+<table>
+  <thead><tr><th>Funzione</th><th>Contenuto</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Gestionale</strong></td>
+      <td>Accertamento periodico delle tre grandezze: profilo patrimoniale, finanziario ed economico. Verifica del principio di economicità.</td>
+    </tr>
+    <tr>
+      <td><strong>Tutela del capitale sociale</strong></td>
+      <td>Termine di riferimento legale per: (1) accertamento di perdite oltre 1/3 o sotto il minimo; (2) calcolo del limite all'emissione di obbligazioni (max il doppio del patrimonio netto); (3) calcolo degli utili distribuibili e delle riserve disponibili per l'acquisto di azioni proprie.</td>
+    </tr>
+    <tr>
+      <td><strong>Informativa interna</strong></td>
+      <td>Strumento per i soci per valutare la situazione patrimoniale e verificare la sussistenza dei presupposti per un'azione di responsabilità contro gli amministratori.</td>
+    </tr>
+    <tr>
+      <td><strong>Informativa esterna</strong></td>
+      <td>Strumento per i creditori (monitoraggio della garanzia patrimoniale generica), per futuri investitori e per altri imprenditori che vogliano contrarre con la società. Il bilancio approvato deve essere depositato al Registro delle imprese (art. 2435).</td>
+    </tr>
+    <tr>
+      <td><strong>Fiscale</strong></td>
+      <td>Termine di riferimento per la determinazione delle imposte sul reddito d'impresa, calcolate sul risultato economico netto d'esercizio.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="struttura">7.2 Struttura piramidale e clausole generali</h2>
+
+<div class="def">La disciplina del bilancio è imperativa e inderogabile. La sua struttura è piramidale: le regole di dettaglio cedono di fronte alle clausole generali, che cedono mai.</div>
+
+<ol>
+  <li><strong>Clausole generali</strong> (vertice): <em>chiarezza, verità e correttezza</em> (art. 2423). Sono il parametro supremo.</li>
+  <li><strong>Principi tecnici di redazione</strong>: criteri per l'iscrizione e la valutazione degli elementi del patrimonio.</li>
+  <li><strong>Disposizioni attuative</strong>: struttura e composizione dettagliata del bilancio.</li>
+  <li><strong>Regole di valutazione dei singoli cespiti</strong>: criteri specifici per ogni voce.</li>
+</ol>
+
+<h3>Clausola di flessibilità bidirezionale (art. 2423)</h3>
+<ul>
+  <li>Se il rispetto delle regole di dettaglio non è sufficiente a rendere il bilancio chiaro, veritiero e corretto → bisogna <strong>aggiungere</strong> informazioni nella nota integrativa.</li>
+  <li>Se alcune disposizioni di dettaglio rendono il bilancio non chiaro, veritiero o corretto → quelle norme di dettaglio <strong>devono essere derogate</strong>, motivando la deroga nella nota integrativa.</li>
+</ul>
+
+<div class="exc">La nota integrativa è l'unico documento alfanumerico del bilancio; gli altri sono numerici. Illustra e giustifica i dati numerici, dà atto delle deroghe alle norme di dettaglio e fornisce informazioni aggiuntive. La redazione spetta agli amministratori in via esclusiva.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="principi">7.3 Principi tecnici di redazione</h2>
+
+<table>
+  <thead><tr><th>Principio</th><th>Contenuto</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Prudenza</strong></td>
+      <td>Le attività si iscrivono solo se certe; le passività si iscrivono anche se soltanto possibili o probabili. Asimmetria a protezione dei terzi.</td>
+    </tr>
+    <tr>
+      <td><strong>Continuità aziendale</strong> (going concern)</td>
+      <td>Le attività e le passività sono valutate considerando il loro utilizzo duraturo nell'attività d'impresa: non al valore di mercato o di realizzo, ma al valore di continuità (es. il macchinario vale per quanto serve alla produzione, non per quanto si ricaverebbe vendendolo).</td>
+    </tr>
+    <tr>
+      <td><strong>Competenza</strong> (non di cassa)</td>
+      <td>Costi e ricavi, oneri e proventi, si imputano all'esercizio di competenza economica, indipendentemente dalla data di incasso o pagamento effettivo. Es: canone di locazione triennale pagato tutto in anticipo → si imputa 1/3 per ciascun esercizio.</td>
+    </tr>
+    <tr>
+      <td><strong>Continuità formale</strong> (consistency)</td>
+      <td>I criteri di valutazione non possono essere modificati da un esercizio all'altro, per garantire la comparabilità dei bilanci nel tempo.</td>
+    </tr>
+    <tr>
+      <td><strong>Prevalenza della sostanza sulla forma</strong></td>
+      <td>La sostanza economica dell'operazione prevale sulla forma giuridica. Es: compravendita con obbligo di retrocessione → il bene rimane iscritto nello stato patrimoniale del venditore, non dell'acquirente, perché economicamente è come un finanziamento garantito.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="composizione">7.4 Composizione del bilancio</h2>
+
+<p>Il bilancio si compone di <strong>4 documenti</strong> e <strong>2 allegati</strong>.</p>
+
+<h3>Documenti</h3>
+<table>
+  <thead><tr><th>Documento</th><th>Natura</th><th>Contenuto</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Stato patrimoniale</strong></td>
+      <td>Statico</td>
+      <td>Composizione quantitativa e qualitativa del patrimonio (attività e passività) al giorno di chiusura dell'esercizio. Struttura a sezioni contrapposte: attivo a sinistra, passivo a destra. Redatto con il metodo della partita doppia: attivo = passivo sempre.</td>
+    </tr>
+    <tr>
+      <td><strong>Conto economico</strong></td>
+      <td>Dinamico</td>
+      <td>Risultato economico finale dell'esercizio: oneri sostenuti e proventi conseguiti nei dodici mesi. Il saldo (utile o perdita) confluisce nel passivo dello stato patrimoniale come voce del patrimonio netto.</td>
+    </tr>
+    <tr>
+      <td><strong>Rendiconto finanziario</strong> (art. 2425-ter)</td>
+      <td>Dinamico</td>
+      <td>Flussi di liquidità generati e assorbiti nel corso dell'esercizio; informazioni sulla capacità dell'impresa di generare disponibilità liquide.</td>
+    </tr>
+    <tr>
+      <td><strong>Nota integrativa</strong></td>
+      <td>Alfanumerico</td>
+      <td>Illustra e chiarisce i dati numerici degli altri documenti; dà atto delle deroghe alle regole di dettaglio e delle informazioni aggiuntive necessarie per una corretta lettura del bilancio.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Allegati</h3>
+<ul>
+  <li><strong>Relazione sulla gestione</strong>: redatta dagli amministratori.</li>
+  <li><strong>Relazione di controllo</strong>: redatta dai sindaci (se si occupano del controllo legale dei conti) o dai sindaci e dai revisori legali, a seconda del sistema di governance adottato.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="conto">7.5 Conto economico (art. 2425)</h2>
+
+<div class="def">Struttura rigida e grigliata dalla legge. Il risultato si ottiene per differenze successive.</div>
+
+<ul>
+  <li><strong>A. Valore della produzione</strong>: ricavi delle vendite, variazioni delle rimanenze di prodotti in corso di lavorazione e finiti, altri ricavi e proventi.</li>
+  <li><strong>B. Costi della produzione</strong>: materie prime, servizi, godimento di beni di terzi, personale, ammortamenti, accantonamenti, altri costi.</li>
+</ul>
+
+<p><strong>A − B</strong> = risultato della gestione caratteristica (attività costituente l'oggetto sociale).</p>
+
+<ul>
+  <li><strong>C. Proventi e oneri finanziari</strong>: interessi attivi e passivi, dividendi da partecipazioni, altri oneri finanziari.</li>
+  <li><strong>D. Rettifiche di valore di attività e passività finanziarie</strong>.</li>
+</ul>
+
+<p><strong>A − B ± C ± D</strong> = risultato economico lordo dell'esercizio → al netto delle imposte → <strong>utile (o perdita) netto d'esercizio</strong>, iscritto nel patrimonio netto dello stato patrimoniale.</p>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="patrimoniale">7.6 Stato patrimoniale (art. 2424)</h2>
+
+<h3>Attivo</h3>
+
+<ul>
+  <li><strong>A. Crediti verso soci</strong> per versamenti ancora dovuti (con separata indicazione della parte richiamata).</li>
+  <li><strong>B. Immobilizzazioni</strong> (investimenti destinati a permanere stabilmente nella società):
+    <ul>
+      <li>Immateriali: marchi, brevetti, know-how, avviamento…</li>
+      <li>Materiali: immobili, impianti, macchinari…</li>
+      <li>Finanziarie: partecipazioni, crediti a lungo termine…</li>
+    </ul>
+  </li>
+  <li><strong>C. Attivo circolante</strong> (beni di pronta e facile liquidazione):
+    <ul>
+      <li>Rimanenze: invenduto in magazzino, materie prime non ancora lavorate…</li>
+      <li>Crediti verso clienti, verso imprese del gruppo, tributari…</li>
+      <li>Attività finanziarie non immobilizzate: destinate a rapida rivendita sul mercato.</li>
+      <li>Disponibilità liquide: depositi bancari, cassa, assegni.</li>
+    </ul>
+  </li>
+  <li><strong>D. Ratei e risconti attivi</strong>: rettifiche per disallineamento tra competenza economica e cassa (es. canone pagato anticipatamente per esercizi futuri).</li>
+</ul>
+
+<h3>Passivo</h3>
+
+<div class="exc">Il passivo comprende il <strong>passivo reale</strong> (debiti ed obbligazioni) e il <strong>passivo ideale</strong> (patrimonio netto). Il patrimonio netto figura nel passivo per convenzione contabile: attivo e passivo devono sempre equivalersi. Se la società paga tutti i debiti con l'attivo, il residuo copre i soci tramite il patrimonio netto.</div>
+
+<h3>A. Patrimonio netto</h3>
+<table>
+  <thead><tr><th>Voce</th><th>Contenuto</th></tr></thead>
+  <tbody>
+    <tr><td>I. Capitale</td><td>Capitale sociale nominale iscritto nell'atto costitutivo</td></tr>
+    <tr><td>II. Riserva da sovrapprezzo delle azioni</td><td>Differenza tra prezzo di emissione e valore nominale delle azioni</td></tr>
+    <tr><td>III. Riserve di rivalutazione</td><td>Rivalutazioni monetarie disposte per legge</td></tr>
+    <tr><td>IV. Riserva legale</td><td>5% degli utili netti per esercizio, fino al 20% del capitale sociale nominale (obbligatoria — art. 2430)</td></tr>
+    <tr><td>V. Riserve statutarie</td><td>Previste dallo statuto</td></tr>
+    <tr><td>VI. Altre riserve</td><td>Riserve facoltative deliberate dall'assemblea; riserva per azioni proprie (negativa)</td></tr>
+    <tr><td>VII. Riserva per operazioni di copertura dei flussi finanziari attesi</td><td>Strumenti di copertura del rischio finanziario</td></tr>
+    <tr><td>VIII. Utili (perdite) portati a nuovo</td><td>Utili di esercizi precedenti non distribuiti e accantonati; perdite inferiori a 1/3 o rinviate a nuovo dall'assemblea ex art. 2446</td></tr>
+    <tr><td>IX. Utile (perdita) dell'esercizio</td><td>Risultato del conto economico: incrementa o riduce il patrimonio netto</td></tr>
+    <tr><td>X. Riserva negativa per azioni proprie in portafoglio</td><td>Posta correttiva del patrimonio netto pari al prezzo di acquisto delle azioni proprie</td></tr>
+  </tbody>
+</table>
+
+<h3>Passivo reale (voci B–E)</h3>
+<ul>
+  <li><strong>B. Fondi per rischi e oneri</strong>: passività probabili di ammontare o scadenza incerti (es. fondi per cause in corso).</li>
+  <li><strong>C. Trattamento di fine rapporto di lavoro subordinato</strong>: certo nell'esistenza ma incerto nel quando e nel quanto.</li>
+  <li><strong>D. Debiti</strong> (con separata indicazione degli importi esigibili oltre l'esercizio successivo): obbligazioni, obbligazioni convertibili, debiti verso soci per finanziamenti, debiti verso banche, verso fornitori, debiti tributari, verso istituti previdenziali, altri debiti.</li>
+  <li><strong>E. Ratei e risconti passivi</strong>: rettifiche simmetriche a quelle dell'attivo.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="procedimento">7.7 Procedimento di approvazione</h2>
+
+<h3>Competenze</h3>
+<ul>
+  <li><strong>Redazione</strong>: spetta agli amministratori in via <strong>esclusiva e non delegabile</strong>.</li>
+  <li><strong>Approvazione</strong>: spetta all'assemblea ordinaria (nel sistema tradizionale) o al consiglio di sorveglianza (nel sistema dualistico).</li>
+  <li><strong>Distribuzione dell'utile</strong>: spetta all'assemblea ordinaria, nel rispetto delle riserve legali e statutarie e delle eventuali categorie speciali di azioni.</li>
+  <li>La delibera di approvazione deve essere <strong>depositata al Registro delle imprese</strong> (art. 2435).</li>
+</ul>
+
+<h3>Effetti dell'approvazione del bilancio</h3>
+<ul>
+  <li>L'approvazione <strong>non libera gli amministratori dalla responsabilità</strong>: l'azione di responsabilità può essere votata in occasione dell'assemblea di bilancio anche senza essere all'ordine del giorno, per fatti di competenza dell'esercizio cui il bilancio si riferisce (art. 2393 co. 2).</li>
+  <li>Il socio che sia anche amministratore non può votare sull'azione di responsabilità (conflitto di interessi).</li>
+  <li>La mancata approvazione reiterata del bilancio configura una causa di scioglimento della società (art. 2484 n. 3: continuata inattività dell'assemblea).</li>
+</ul>
+
+<h3>Invalidità della delibera di approvazione del bilancio</h3>
+<ul>
+  <li>La delibera che approvi un bilancio non chiaro, veritiero o corretto (violazione delle clausole generali) è <strong>nulla</strong>: oggetto lecito (approvazione del bilancio) ma contenuto illecito (il bilancio è falso).</li>
+  <li>Se il bilancio è stato revisionato senza rilievi, per far valere un'azione di nullità occorre detenere il <strong>5% del capitale sociale</strong>.</li>
+  <li>L'impugnazione del bilancio non può essere proposta dopo l'approvazione del bilancio dell'<strong>esercizio successivo</strong> (art. 2434-bis).</li>
+</ul>
+  </div>
+
+  <!-- ══ SEZIONE 8 ══ -->
+  <div id="s8" class="section">
+    <button class="back-btn" onclick="goHome()">← Torna al menu</button>
+<h1>8. Rapporto stato-mercato</h1>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#intro">Introduzione: stati e imprese nell'UE</a></li>
+    <li><a href="#transnazionali">Società transnazionali e criteri di collegamento</a></li>
+    <li><a href="#direttive">Stagione delle direttive europee</a></li>
+    <li><a href="#stabilimento">Libertà di stabilimento: artt. 49–54 TFUE</a></li>
+    <li><a href="#sentenze">Giurisprudenza CGUE sulla libertà di stabilimento</a></li>
+    <li><a href="#governance">Modelli di governance: dualistico e monistico</a></li>
+  </ol>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="intro">8.1 Introduzione: stati e imprese nell'UE</h2>
+
+<ul>
+  <li>Gli imprenditori hanno bisogno di: mercato concorrenziale leale; condizioni ottimali per costituire ed evolvere l'impresa (fattori economici, giuridici, fiscali); tutela transnazionale di marchi, brevetti, informazioni.</li>
+  <li>Gli stati hanno bisogno delle imprese (gettito fiscale, occupazione, risparmio reinvestibile) ma anche di controllarne l'attività.</li>
+  <li>Il binomio stato-mercato diventa nell'UE: <strong>stati membri ↔ Unione Europea</strong>.</li>
+  <li>L'UE nasce come comunità economica; il suo basamento è il <strong>mercato unico sovranazionale</strong> senza barriere per persone, merci, capitali, imprese.</li>
+  <li>I due principi fondanti: (1) <strong>armonizzazione</strong> dei diritti degli stati membri; (2) <strong>libertà di stabilimento</strong> delle imprese nel mercato interno.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="transnazionali">8.2 Società transnazionali e criteri di collegamento</h2>
+
+<div class="def">Il diritto internazionale privato (d.i.p.) è la branca del diritto privato nazionale che stabilisce le condizioni in presenza delle quali a fattispecie con caratteri di transnazionalità si applica il diritto dello Stato che ha emanato quel d.i.p. In materia societaria il criterio di d.i.p. individua la <em>lex societatis</em>, cioè la legge regolatrice della società.</div>
+
+<h3>Tre criteri storici di collegamento</h3>
+<table>
+  <thead><tr><th>Criterio</th><th>Contenuto</th><th>Vantaggi</th><th>Svantaggi</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Controllo</strong></td>
+      <td>Nazionalità dei soci fondatori, degli amministratori, provenienza dei capitali</td>
+      <td>—</td>
+      <td>Poco rappresentativo; incerto e mobile (soci e amministratori cambiano)</td>
+    </tr>
+    <tr>
+      <td><strong>Incorporazione</strong></td>
+      <td>Legge dello Stato in cui si è realizzata la costituzione della società (sede statutaria/legale, iscrizione nel registro)</td>
+      <td>Certezza: la sede legale è un dato formale certo</td>
+      <td>Non coglie il collegamento reale con il territorio in cui si opera</td>
+    </tr>
+    <tr>
+      <td><strong>Sede reale o effettiva</strong></td>
+      <td>Luogo in cui si svolge la parte principale dell'attività economica o in cui si riunisce l'organo amministrativo</td>
+      <td>Coglie bene il collegamento con il territorio</td>
+      <td>Assoluta incertezza (prevalenza dell'attività = fatturato? produzione?)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Il sistema italiano (art. 25, l. 218/1995)</h3>
+<div class="art">Le società sono disciplinate dalla legge dello Stato nel cui territorio è stato perfezionato il procedimento di costituzione. Si applica tuttavia la legge italiana se la sede dell'amministrazione è situata in Italia ovvero se in Italia si trova l'oggetto principale dell'ente.</div>
+<ul>
+  <li>Criterio <strong>primario</strong>: incorporazione (sede legale/costituzione) → sono italiane le società di capitali iscritte al registro delle imprese italiano.</li>
+  <li>Criterio <strong>sussidiario/correttivo</strong>: sede reale → si applica la legge italiana se in Italia si trova la sede dell'amministrazione o l'oggetto principale, anche se la società è stata costituita all'estero.</li>
+  <li>La <em>lex societatis</em> disciplina: natura giuridica, denominazione, costituzione/trasformazione/estinzione, capacità, organi, rappresentanza, qualità di socio, responsabilità, conseguenze delle violazioni dell'atto costitutivo.</li>
+</ul>
+
+<div class="exc">La sentenza Edil Work (CGUE, 2024) ha stabilito che il criterio della sede reale (seconda parte dell'art. 25 l. 218/1995) deve essere disapplicato quando contrasta con la libertà di stabilimento: si applica quindi il criterio dell'incorporazione, che è l'unico a favorire la mobilità transfrontaliera garantendo certezza del diritto.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="direttive">8.3 Direttive europee in materia societaria</h2>
+
+<div class="def">L'armonizzazione conduce a una concordanza di principi tra i diritti nazionali, non a un diritto uniforme. Le direttive fissano obiettivi; gli stati scelgono come realizzarli. Una norma interna in contrasto con una direttiva deve essere disapplicata.</div>
+
+<table>
+  <thead><tr><th>Direttiva</th><th>Oggetto</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><strong>1ª</strong> (anni '60)</td><td>Pubblicità degli atti societari, validità degli atti, nullità della società</td><td>Recepita in Italia nel 1969; introduce l'inopponibilità ai terzi delle limitazioni ai poteri degli amministratori (art. 2384); cause tassative di nullità della società</td></tr>
+    <tr><td><strong>2ª</strong></td><td>Capitale minimo e tutela del capitale sociale delle s.p.a.</td><td>Vieta i conferimenti d'opera nelle s.p.a.; richiede la perizia per i conferimenti in natura; aggiornata nel 2010 con meccanismi di valutazione alternativi</td></tr>
+    <tr><td><strong>3ª</strong></td><td>Fusioni interne</td><td>Prima disciplina organica delle fusioni</td></tr>
+    <tr><td><strong>4ª</strong></td><td>Bilanci annuali (conti annuali)</td><td>Introduce griglie inderogabili: tutti i bilanci hanno la stessa struttura e le stesse voci; leggibilità e comparabilità</td></tr>
+    <tr><td><strong>5ª</strong></td><td>Governance delle società di capitali</td><td><strong>Non approvata</strong>: veti incrociati sulla cogestione (modello tedesco); il sistema dualistico è stato poi introdotto in Italia nel 2003 senza cogestione</td></tr>
+    <tr><td><strong>6ª</strong></td><td>Scissioni interne</td><td>Introduce per la prima volta nell'ordinamento italiano l'istituto della scissione</td></tr>
+    <tr><td><strong>7ª</strong></td><td>Bilanci consolidati (conti consolidati di gruppo)</td><td>—</td></tr>
+    <tr><td><strong>8ª</strong></td><td>Revisori legali dei conti</td><td>Disciplina i soggetti incaricati del controllo della contabilità</td></tr>
+    <tr><td><strong>9ª</strong></td><td>Gruppi di società</td><td><strong>Non approvata</strong>: ostilità verso il modello tedesco di disciplina dei gruppi</td></tr>
+    <tr><td><strong>10ª</strong></td><td>Fusioni transfrontaliere</td><td>Approvata dopo che la CGUE aveva già riconosciuto queste operazioni come modalità di attuazione della libertà di stabilimento</td></tr>
+    <tr><td><strong>11ª</strong></td><td>Filiali, succursali, sedi secondarie in altro Stato membro</td><td>Regole di pubblicità nei registri delle imprese dei diversi Stati</td></tr>
+    <tr><td><strong>12ª</strong> (1991, recepita 1993)</td><td>S.r.l. unipersonale</td><td>Legittima la costituzione originaria unipersonale (in Italia già ammessa come punto di arrivo, non di partenza). Nel 2003 estesa alla s.p.a.</td></tr>
+    <tr><td><strong>13ª</strong></td><td>Offerta pubblica d'acquisto (OPA)</td><td>Non approvata; approvata una direttiva quadro sulle scalate alle società quotate</td></tr>
+    <tr><td><strong>Dir. 2019/2121</strong></td><td>Trasformazioni, fusioni e scissioni transfrontaliere</td><td>Recepisce la giurisprudenza CGUE; attuata in Italia con d.lgs. 19/2023 mod. con 88/2024</td></tr>
+  </tbody>
+</table>
+
+<h3>Strumenti regolamentari (diritto uniforme)</h3>
+<ul>
+  <li>I regolamenti hanno portata generale e obbligatoria, direttamente applicabili senza recepimento.</li>
+  <li>Istituti di esclusivo diritto europeo (scarsa applicazione pratica): <strong>Società Europea (SE)</strong>, <strong>Società Cooperativa Europea (SCE)</strong>, <strong>GEIE</strong> (Gruppo Europeo di Interesse Economico).</li>
+  <li><strong>Proposta "28° regime"</strong> (Commissione, marzo 2026): società europea (EU Inc.) per PMI, startup e imprese innovative, come modello unitario accessibile a tutti gli operatori UE.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="stabilimento">8.4 Libertà di stabilimento: artt. 49–54 TFUE</h2>
+
+<div class="art">Art. 49 TFUE: le restrizioni alla libertà di stabilimento dei cittadini di uno Stato membro nel territorio di un altro Stato membro sono vietate. La libertà comprende l'accesso ad attività autonome e al loro esercizio, nonché la costituzione e gestione di imprese e di società.</div>
+
+<h3>Diritto primario e secondario di stabilimento</h3>
+<table>
+  <thead><tr><th></th><th>Contenuto</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Stabilimento primario</strong></td><td>Diritto di costituire un'attività autonoma in uno o più stati membri diversi da quello di cittadinanza, o di trasferirvi un'attività già istituita. Comporta una rescissione del collegamento con la sede originaria.</td></tr>
+    <tr><td><strong>Stabilimento secondario</strong></td><td>Diritto di aprire succursali, filiali o agenzie in uno o più stati UE, mantenendo il radicamento nel primo paese.</td></tr>
+  </tbody>
+</table>
+
+<h3>Equiparazione delle società alle persone fisiche (art. 54 TFUE)</h3>
+<p>Le società sono equiparate ai cittadini UE ai fini della libertà di stabilimento se: (a) sono validamente costituite in conformità alla legislazione di uno Stato membro; <em>e</em> (b) hanno la sede sociale, l'amministrazione centrale <em>o</em> il centro di attività principale nel territorio UE. Il TFUE non sceglie tra criterio dell'incorporazione e della sede reale: richiama implicitamente entrambi come requisiti alternativi di connessione.</p>
+
+<h3>Limiti alla libertà di stabilimento (art. 52 TFUE — test Gebhard)</h3>
+<p>Una misura restrittiva è giustificabile solo se soddisfa cumulativamente quattro condizioni (sentenza Gebhard, CGUE anni '80):</p>
+<ol>
+  <li>Giustificata da <strong>motivi imperativi di interesse pubblico</strong> (non il solo interesse fiscale).</li>
+  <li><strong>Non discriminatoria</strong>: tratta paritariamente cittadini nazionali e stranieri.</li>
+  <li><strong>Idonea</strong> a raggiungere lo scopo di protezione.</li>
+  <li><strong>Proporzionata</strong>: non eccessiva rispetto all'obiettivo.</li>
+</ol>
+
+<div class="exc">L'evoluzione della CGUE ha condotto dal divieto di trattamento discriminatorio a un vero e proprio obbligo di non intralciare — se non addirittura favorire — la libera mobilità transfrontaliera delle imprese. Le disposizioni nazionali che vietino, ostacolino o rendano meno attrattiva la libertà di stabilimento sono incompatibili con gli artt. 49–54 TFUE.</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="sentenze">8.5 Giurisprudenza CGUE sulla libertà di stabilimento</h2>
+
+<div class="def">La CGUE ha creato diritto in questo settore: almeno la direttiva 10ª e quella del 2019 sono il recepimento legislativo di ciò che la Corte aveva già stabilito. Il fenomeno ha originato la <strong>concorrenza tra ordinamenti</strong>: gli stati vogliono attrarre imprese straniere e trattenere quelle nazionali.</div>
+
+<h3>Daily Mail (1988) — prospettiva dello Stato di origine</h3>
+<div class="def">Una società inglese intendeva trasferire la sede legale in Irlanda per ottenere un risparmio fiscale, senza autorizzazione del Ministero del Tesoro inglese richiesta dalla legge. La CGUE ritiene legittima la normativa inglese: le società esistono solo in quanto e finché un ordinamento le riconosce; ogni Stato membro è libero di determinare le condizioni in presenza delle quali una società può essere costituita e può continuare a esistere. È quindi legittimo che uno Stato subordini il trasferimento all'estero della sede a un regime autorizzatorio.</div>
+
+<h3>Centros (1999) — spartiacque — prospettiva dello Stato ospitante</h3>
+<div class="def">Due coniugi danesi costituiscono una private limited company in UK (sede legale) con l'intenzione di svolgere tutta l'attività in Danimarca. Aprono una succursale danese: il conservatore del registro nega l'iscrizione per presunto abuso del diritto di stabilimento. La CGUE dichiara l'operazione legittima.</div>
+<ul>
+  <li>L'art. 54 TFUE non richiede che l'attività economica sia svolta nello stesso paese della sede legale.</li>
+  <li>La scelta dell'ordinamento più favorevole è libero esercizio della libertà di stabilimento: dà origine alla <strong>concorrenza tra ordinamenti</strong>.</li>
+  <li>Le misure restrittive danese non superano il test Gebhard: non proporzionate, perché se i coniugi avessero esercitato anche una minima attività in UK non ci sarebbero stati problemi.</li>
+  <li>Effetto: la sede legale e la sede reale possono essere totalmente separate (<em>pseudo-foreign company</em>).</li>
+  <li><em>Differenza con Daily Mail</em>: Daily Mail guarda dallo Stato di origine; Centros guarda dallo Stato ospitante. Fattispecie diverse.</li>
+</ul>
+
+<h3>Überseering (2002) — capacità giuridica della società straniera</h3>
+<div class="def">Società olandese con immobili in Germania: quando il suo capitale passa interamente a cittadini tedeschi, il giudice tedesco (che applica il criterio della sede reale) la dichiara priva di capacità giuridica e processuale in Germania perché non costituita secondo il diritto tedesco. La CGUE: gli stati possono scegliere il criterio che preferiscono, ma non possono negare il riconoscimento di una società validamente costituita secondo il diritto di un altro Stato membro. Il criterio della sede reale deve essere disapplicato rispetto all'ingresso di società straniere regolarmente costituite.</div>
+
+<h3>Inspire Art (2003) — completamento del percorso di Centros</h3>
+<div class="def">Società inglese costituita da soci olandesi, che esercita tutta l'attività economica (commercio di opere d'arte) ad Amsterdam. L'Olanda impone alle "società solo formalmente straniere" obblighi aggiuntivi (pubblicità, capitale minimo) con la sanzione della responsabilità personale e illimitata degli amministratori in caso di inadempimento. La CGUE dichiara la normativa olandese illegittima.</div>
+<ul>
+  <li>Gli adempimenti pubblicitari sono armonizzati dall'undicesima direttiva: gli stati non possono imporne di ulteriori.</li>
+  <li>Non c'è abuso della libertà di stabilimento: riprende Centros.</li>
+  <li>L'abuso deve essere provato caso per caso; non può essere presunto in via generale per tutte le pseudo-foreign companies.</li>
+  <li><em>Sintesi del percorso</em>: Centros → libertà di scelta dell'ordinamento; Überseering → il criterio della sede reale non è opponibile alle società straniere; Inspire Art → l'abuso va valutato in concreto, non colpito con sanzioni indiscriminate.</li>
+</ul>
+
+<h3>Cadbury Schweppes (2006) — limiti dell'abuso: le brass plate companies</h3>
+<div class="def">Società inglese che apre succursali in Irlanda dichiaratamente per beneficiare di un risparmio fiscale. La CGUE: la ricerca di un vantaggio fiscale non costituisce di per sé abuso della libertà di stabilimento. Condizione: le sedi secondarie non possono essere meramente fittizie, prive di qualsiasi attività economica reale (<em>brass plate companies</em> / "contenitori"). Il caso è distinto da Centros perché si tratta di diritto fiscale, non societario.</div>
+
+<h3>Cartesio (2008) — prospettiva dello Stato di origine (come Daily Mail) + obiter dictum fondamentale</h3>
+<div class="def">Società ungherese che vuole trasferire in Italia la sede reale mantenendo la sede legale in Ungheria (che applica il criterio della sede reale). L'Ungheria si oppone. La CGUE dà ragione all'Ungheria: uno Stato può rifiutare di considerare soggetta alla sua legge una società che non rispetta i suoi criteri di collegamento (come Daily Mail). Obiter dictum cruciale: l'Ungheria non avrebbe potuto opporsi se la Cartesio avesse realizzato, tramite il trasferimento, una vera e propria trasformazione in una società retta dal diritto italiano. Questo obiter getta le basi per la direttiva 2019/2121 sulle trasformazioni transfrontaliere.</div>
+
+<h3>Vale (2012) — trasformazione transfrontaliera come libertà di stabilimento primario</h3>
+<div class="def">Società italiana che vuole trasformarsi in una società di diritto ungherese trasferendo la sede legale in Ungheria. Il registro ungherese rifiuta l'iscrizione perché la legge ungherese ammetteva la trasformazione solo tra società ungheresi. La CGUE: la trasformazione transfrontaliera rientra nell'esercizio della libertà di stabilimento a carattere primario; la norma ungherese tratta in modo discriminatorio le società straniere rispetto a quelle nazionali e non supera il test Gebhard.</div>
+
+<h3>Kornhaas (2015) — torsione: norme concorsuali e libertà di stabilimento</h3>
+<div class="def">Società di diritto inglese con sede reale in Germania che diventa insolvente. Il tribunale tedesco applica all'amministratrice unica una norma del diritto tedesco delle s.r.l. che vieta i pagamenti dopo l'accertamento dell'insolvenza (con obbligo di restituzione). La CGUE — in sezione semplice — pronuncia: la norma tedesca è di diritto concorsuale (non societario); la sua applicazione a una società straniera non contrasta con la libertà di stabilimento perché non riguarda la costituzione né lo spostamento della società.</div>
+<div class="exc">Kornhaas è controversa e sembra in tensione con Centros/Überseering/Inspire Art. Critiche: (1) la norma si applica anche prima dell'apertura della procedura, quindi sembra più societaria che concorsuale; (2) il fenomeno dell'"insolvencification" — qualificare come concorsuali norme che potrebbero essere societarie per applicarle indipendentemente dall'incorporazione — è considerato un modo per reintrodurre de facto il criterio della sede reale; (3) difficile sostenere che norme sulla responsabilità degli amministratori non incidano sulla libertà di stabilimento. La risposta dell'UE: due direttive di armonizzazione delle discipline concorsuali degli stati membri (prima direttiva insolvency recepita con il codice della crisi; seconda direttiva insolvency in corso di recepimento).</div>
+
+<h3>Polbud (2017) — libertà di scelta dell'ordinamento durante la vita della società</h3>
+<div class="def">Società polacca che trasferisce la sede legale in Lussemburgo per sfruttarne la legislazione societaria, continuando a operare in Polonia. La Polonia condizionava la cancellazione dal registro all'avvenuta liquidazione. La CGUE: la norma polacca è illegittima perché presume che ogni trasferimento di sede sia abusivo; l'abuso non si può presumere. La libertà di scegliere l'ordinamento più favorevole può essere esercitata anche durante la vita della società, non solo al momento della costituzione. Il criterio dell'incorporazione non è più storico e immutabile, ma mobile: può cambiare con la trasformazione transfrontaliera.</div>
+
+<h3>Edil Work (2024) — prevalenza definitiva del criterio dell'incorporazione nell'UE</h3>
+<div class="def">Società italiana che trasferisce la sede legale in Lussemburgo ma mantiene sede reale e unico bene (un castello) in Italia. L'art. 25 l. 218/1995 (criterio sussidiario della sede reale) vorrebbe applicare la legge italiana. La CGUE: ogni Stato membro è libero di scegliere il proprio criterio di collegamento, ma deve disapplicare quello che contrasta con la libertà di stabilimento. Il criterio della sede reale, nella misura in cui ostacoli la mobilità transfrontaliera, deve essere disapplicato. Si applica quindi il criterio dell'incorporazione (diritto lussemburghese). Effetto: il trasferimento della sede legale produce il cambiamento della lex societatis anche se la sede reale rimane nel paese d'origine.</div>
+
+<h3>Quadro sinottico delle sentenze</h3>
+<table>
+  <thead><tr><th>Sentenza</th><th>Anno</th><th>Esito</th><th>Principio chiave</th></tr></thead>
+  <tbody>
+    <tr><td>Daily Mail</td><td>1988</td><td>Normativa inglese legittima</td><td>Lo Stato di origine può condizionare il trasferimento della sede legale</td></tr>
+    <tr><td>Centros</td><td>1999</td><td>Normativa danese illegittima</td><td>Libertà di scegliere l'ordinamento societario più favorevole; pseudo-foreign companies ammesse; concorrenza tra ordinamenti</td></tr>
+    <tr><td>Überseering</td><td>2002</td><td>Normativa tedesca illegittima</td><td>Il criterio della sede reale non può essere opposto a una società straniera regolarmente costituita</td></tr>
+    <tr><td>Inspire Art</td><td>2003</td><td>Normativa olandese illegittima</td><td>L'abuso della libertà di stabilimento va valutato in concreto, non presunto in via generale</td></tr>
+    <tr><td>Cadbury Schweppes</td><td>2006</td><td>Operazione legittima (con condizioni)</td><td>Il risparmio fiscale non è abuso; le sedi secondarie non possono essere puramente fittizie</td></tr>
+    <tr><td>Cartesio</td><td>2008</td><td>Normativa ungherese legittima + obiter dictum</td><td>Lo Stato di origine può opporsi; ma non potrebbe farlo in caso di trasformazione transfrontaliera</td></tr>
+    <tr><td>Vale</td><td>2012</td><td>Normativa ungherese illegittima</td><td>La trasformazione transfrontaliera è un esercizio della libertà primaria di stabilimento</td></tr>
+    <tr><td>Kornhaas</td><td>2015</td><td>Normativa tedesca legittima</td><td>Le norme concorsuali si applicano indipendentemente dall'incorporazione (controverso)</td></tr>
+    <tr><td>Polbud</td><td>2017</td><td>Normativa polacca illegittima</td><td>La scelta dell'ordinamento può avvenire anche durante la vita della società; incorporazione è criterio mobile</td></tr>
+    <tr><td>Edil Work</td><td>2024</td><td>Criterio sede reale (art. 25 l. 218) da disapplicare</td><td>Il criterio dell'incorporazione prevale nell'UE perché è l'unico che favorisce la mobilità garantendo certezza</td></tr>
+  </tbody>
+</table>
+
+<h3>Effetti della concorrenza tra ordinamenti</h3>
+<ul>
+  <li>Stagione di riforme delle s.r.l. nazionali sul modello inglese (più flessibile e accessibile).</li>
+  <li>Introduzione del voto plurimo e maggiorato (frutto di operazioni di fusione transfrontaliera come Fiat-Stellantis).</li>
+  <li>Circolazione dei modelli di governance: sistema dualistico (Germania) e monistico (common law) introdotti in Italia nel 2003.</li>
+</ul>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="governance">8.6 Modelli di governance: dualistico e monistico</h2>
+
+<div class="def">Dal 2003 l'ordinamento italiano prevede tre modelli alternativi di governance per le s.p.a. Con la riforma del TUF (2026) i tre sistemi vengono messi sullo stesso piano con regole comuni; i modelli si chiamano ora: (a) sistema senza consiglio di sorveglianza (con consiglio di amministrazione); (b) sistema con consiglio di sorveglianza e consiglio di gestione. Il modello tradizionale rimane quello suppletivo.</div>
+
+<h3>Modello dualistico (origine tedesca)</h3>
+<ul>
+  <li>Organi: assemblea ordinaria e straordinaria → <strong>consiglio di sorveglianza</strong> → <strong>consiglio di gestione</strong> + revisore legale dei conti.</li>
+  <li>L'assemblea nomina, revoca, fissa il compenso e vota l'azione di responsabilità <em>contro i consiglieri di sorveglianza</em>; distribuisce gli utili.</li>
+  <li>Il <strong>consiglio di sorveglianza</strong> è un organo intermedio con doppia funzione: nomina e revoca il consiglio di gestione; approva il bilancio (sottraendo questa competenza all'assemblea); esercita il controllo interno (analogo al collegio sindacale). Se previsto dallo statuto, può anche deliberare sulle operazioni strategiche e sui piani industriali e finanziari predisposti dal consiglio di gestione (art. 2409-terdecies lett. f-bis).</li>
+  <li>Il <strong>consiglio di gestione</strong> è di fatto un consiglio di amministrazione: gestisce l'impresa.</li>
+  <li>In Italia non prevede la cogestione (presenza di rappresentanti dei lavoratori negli organi), che invece è strutturalmente connessa al sistema tedesco. Scarso utilizzo pratico; impiegato nei passaggi generazionali.</li>
+</ul>
+
+<h3>Modello monistico (origine anglosassone)</h3>
+<ul>
+  <li>Organi: assemblea → <strong>consiglio di amministrazione</strong> (con al suo interno il <strong>comitato per il controllo sulla gestione</strong>) + revisore esterno.</li>
+  <li>L'assemblea ha le stesse competenze del sistema tradizionale e nomina il CDA, assicurandosi che almeno <strong>1/3 degli amministratori sia indipendente</strong> (con i requisiti di indipendenza previsti per i sindaci).</li>
+  <li>Il CDA nomina al proprio interno, tra i membri indipendenti, i componenti del <strong>comitato per il controllo sulla gestione</strong>.</li>
+  <li>Il sistema è "monistico" perché i controllori (comitato) sono anche controllati (amministratori): siedono contemporaneamente nel CDA e nel comitato.</li>
+  <li>Vantaggio: i componenti del comitato hanno piena informazione essendo amministratori a tutti gli effetti. Sono gravati da specifici doveri che li rendono maggiormente responsabili.</li>
+  <li>Critica: commistione tra controllati e controllori che può minare la serietà del controllo.</li>
+  <li>Stagione positiva ma utilizzo limitato; difficoltà legate soprattutto alla disciplina concorsuale.</li>
+</ul>
+
+<div class="exc">Concorrenza e armonizzazione non sono antitetiche: entrambe contribuiscono in modo diverso alla creazione del mercato unico. La concorrenza riguarda i profili estranei o non coperti dall'armonizzazione; l'armonizzazione garantisce un livello minimo comune di tutela di soci di minoranza, creditori e lavoratori.</div>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+function show(id) {
+  document.getElementById('home').style.display = 'none';
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+function goHome() {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('home').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
